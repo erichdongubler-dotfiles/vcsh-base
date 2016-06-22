@@ -63,6 +63,9 @@ function mcd() {
 	cd $1	
 }
 
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+
 #And finally, the PS1 prompt!
 BASIC_GIT_PROMPT="${BASIC_GIT_PROMPT:-$HOME/Scripts/git/git-prompt.sh}"
 FANCY_GIT_PROMPT="${FANCY_GIT_PROMPT:-$HOME/.bash-git-prompt/gitprompt.sh}"
@@ -109,8 +112,3 @@ function set_ps1 {
 	fi
 }
 set_ps1
-
-# LDS-specific stuff
-function touch-existing() {
-	ls $* | tee /dev/tty | xargs touch
-}
