@@ -1,0 +1,26 @@
+[user]
+	email = erichdongubler@gmail.com
+	name = Erich Gubler
+[push]
+	default = simple
+[merge]
+	ff = only
+	tool = kdiff3
+[alias]
+	prettylog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	pl = !git prettylog
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	edit-config = config --global -e
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	pushup = !git up && git push
+	uplog = !git up && git prettylog
+	ls = status
+	commit-everything = !git add -A && git commit
+	init-commit = !git commit-everything -m 'Initial commit'
+	init-magic = !git init && touch .gitignore && git init-commit
+	init-sublime = !~/Scripts/sublime/create-project.sh && git init-magic
+[core]
+	autocrlf = input
+	longpaths = true
+	fscache = true
