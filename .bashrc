@@ -70,16 +70,16 @@ function __custom_ps1 () {
 		__ps1="$__ps1 \e[31m$git_branch";
 	fi
 
-	local code=" \e[1;35m"
+	local color="\n"
 	case "$__previous_result" in
-		0) code="$code$>";;
-		*) code="$code[$__previous_result]>";;
+		0) color="$color\e[32m";;
+		*) color="$color\e[31m";;
 	esac
-	__ps1="$__ps1$code \e[00m";
+	__ps1="$__ps1$color$ \e[00m";
 }
 PROMPT_DIRTRIM=3
 PROMPT_COMMAND=__custom_ps1
-PS1='\[\e[1;34m\]\w $(echo -e $__ps1)'
+PS1='\n\[\e[1;34m\]\w $(echo -e $__ps1)'
 
 # Some information we may want up front
 initial_login_print() {
