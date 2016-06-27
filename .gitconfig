@@ -24,3 +24,5 @@
 	autocrlf = input
 	longpaths = true
 	fscache = true
+[color]
+	ui = true
