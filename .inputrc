@@ -1,21 +1,31 @@
-"\e[3~": delete-char
+"\033[3~": delete-char
 
 # VT
-"\e[1~": beginning-of-line
-"\e[4~": end-of-line
+"\033[1~": beginning-of-line
+"\033[4~": end-of-line
 
 # kvt
-"\e[H": beginning-of-line
-"\e[F": end-of-line
+"\033[H": beginning-of-line
+"\033[F": end-of-line
 
 # rxvt and konsole (i.e. the KDE-app...)
-"\e[7~": beginning-of-line
-"\e[8~": end-of-line
+"\033[7~": beginning-of-line
+"\033[8~": end-of-line
 
 # VT220
-"\eOH": beginning-of-line
-"\eOF": end-of-line
+"\033OH": beginning-of-line
+"\033OF": end-of-line
+
+# Mac
+"\033[7~": beginning-of-line
+"\033[4~": end-of-line
+"\001": beginning-of-line
+"\003": end-of-line
 
 # Ctrl-Arrow movement
-"\e[1;5C": forward-word
-"\e[1;5D": backward-word
+"\033[1;5C": forward-word
+"\033[1;5D": backward-word
+"\033[5C": forward-word
+"\033[5D": backward-word
+"\033\033[C": forward-word
+"\033\033[D": backward-word
