@@ -20,6 +20,9 @@
 	init-commit = !git commit-everything -m 'Initial commit'
 	init-magic = !git init && touch .gitignore && git init-commit
 	init-sublime = !~/Scripts/sublime/create-project.sh && git init-magic
+	list-assumed-unchanged = !git ls-files -v | grep -e "^[hsmrck]"
+	assume-unchanged = update-index --assume-unchanged
+	assume-unchanged-revert = update-index --no-assume-unchanged
 [core]
 	autocrlf = input
 	longpaths = true
