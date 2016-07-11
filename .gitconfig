@@ -14,6 +14,7 @@
 	edit-config = config --global -e
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	pushup = !git up && git push
+	update = !git stash && git up && git stash pop
 	uplog = !git up && git prettylog
 	ls = status
 	commit-everything = !git add -A && git commit
