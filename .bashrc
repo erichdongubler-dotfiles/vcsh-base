@@ -43,25 +43,35 @@ bind '"\033[A": history-search-backward'
 bind '"\033[B": history-search-forward'
 
 # Prompt stuff
+DEFAULT_COLOR="\[\033[00m\]"
+RED_BOLD="\[\033[1;31m\]"
+YELLOW_BOLD="\[\033[1;33m\]"
+GREEN_BOLD="\[\033[1;32m\]"
+BLUE_BOLD="\[\033[1;34m\]"
 function __custom_ps1 () {
 	__previous_result="$?";
-	__ps1=""
 
+	# git branch name
 	local git_branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+	local git_color=${RED_BOLD}
+	local git_prompt=""
 	if [[ $git_branch ]]; then
-		__ps1="$__ps1 \033[31m$git_branch";
+		git_prompt=" $git_color$git_branch";
 	fi
 
-	local color=""
+	# Colored $ depending on error code
+	local dollar=""
 	case "$__previous_result" in
-		0) color="$color\033[1;32m";;
-		*) color="$color\033[1;31m";;
+		0) dollar="${GREEN_BOLD}";;
+		*) dollar="${YELLOW_BOLD}";;
 	esac
-	__ps1="$__ps1$color$ \033[1;00m";
+	dollar="$dollar\$"
+
+	local path="${BLUE_BOLD}\w"
+	PS1="\n$path$git_prompt$dollar${DEFAULT_COLOR} "
 }
 PROMPT_DIRTRIM=3
 PROMPT_COMMAND=__custom_ps1
-PS1='\n\[\033[1;34m\]\w $(echo -e $__ps1)'
 
 # Some information we may want up front
 initial_login_print() {
@@ -73,9 +83,9 @@ initial_login_print
 DOTFILES_EXTENSIONS_FOLDER="$HOME/.dotfiles-extensions"
 reload_dotfiles_extensions () {
 	if [ -d "$DOTFILES_EXTENSIONS_FOLDER" ]; then
-		echo -e "\033[1;37mReloading extensions from \033[1;34m\"$DOTFILES_EXTENSIONS_FOLDER\"\033[00m"
+		echo -e "\033[37mReloading extensions from \033[1;34m\"$DOTFILES_EXTENSIONS_FOLDER\"\033[00m"
 		for file in "$DOTFILES_EXTENSIONS_FOLDER"/*.sh; do
-			echo -e "\033[1;37mLoading extension \033[1;34m${file##*/}\033[00m"
+			echo -e "  \033[37mLoading \033[1;34m${file##*/}\033[00m"
 			. "$file"
 		done
 	fi
