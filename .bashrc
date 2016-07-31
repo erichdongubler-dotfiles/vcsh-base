@@ -17,6 +17,7 @@ case $os in
 	*)
 		eval $(dircolors -b)
 		alias ls='ls --color=auto'
+		alias ll='ls -l --color=auto'
 	;;
 esac
 
