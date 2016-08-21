@@ -76,7 +76,7 @@ PROMPT_COMMAND=__custom_ps1
 
 # Some information we may want up front
 initial_login_print() {
-	echo -e "\033[1;37mLogged in as \033[1;32m$USERNAME\033[1;37m@\033[1;32m$(hostname)\033[00m"
+	echo -e "\033[1;37mLogged in as \033[1;32m$(id -un)\033[1;37m@\033[1;32m$(hostname)\033[00m"
 }
 initial_login_print
 
