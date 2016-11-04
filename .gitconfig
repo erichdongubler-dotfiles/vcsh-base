@@ -28,5 +28,6 @@
 	autocrlf = input
 	longpaths = true
 	fscache = true
+	pager = less -x1,5
 [color]
 	ui = true
