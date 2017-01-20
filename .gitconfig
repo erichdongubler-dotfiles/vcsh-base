@@ -19,11 +19,12 @@
 	ls = status
 	commit-everything = !git add -A && git commit
 	init-commit = !git commit-everything -m 'Initial commit'
-	init-magic = !git init && touch .gitignore && git init-commit
-	init-sublime = !~/Scripts/sublime/create-project.sh && git init-magic
+	init-github = !git init && touch .gitignore && touch README.md && ${EDITOR:-vim} README.md && git init-commit
+	init-sublime = !~/Scripts/sublime/create-project.sh && git init-github
 	list-assumed-unchanged = !git ls-files -v | grep -e "^[hsmrck]"
 	assume-unchanged = update-index --assume-unchanged
 	assume-unchanged-revert = update-index --no-assume-unchanged
+	new = "!f() { touch "$1"; ${EDITOR:-vim} "$1"; git add "$1"; }; f"
 [core]
 	autocrlf = input
 	longpaths = true
