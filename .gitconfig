@@ -7,24 +7,23 @@
 	ff = only
 	tool = kdiff3
 [alias]
-	prettylog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	pl = !git prettylog
-	last = log -1 HEAD
-	unstage = reset HEAD --
-	edit-config = config --global -e
-	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
-	pushup = !git up && git push
-	update = !git stash && git up && git stash pop
-	uplog = !git up && git prettylog
-	ls = status
-	commit-everything = !git add -A && git commit
-	init-commit = !git commit-everything -m 'Initial commit'
-	init-github = !git init && touch .gitignore && touch README.md && ${EDITOR:-vim} README.md && git init-commit
-	init-sublime = !~/Scripts/sublime/create-project.sh && git init-github
-	list-assumed-unchanged = !git ls-files -v | grep -e "^[hsmrck]"
 	assume-unchanged = update-index --assume-unchanged
 	assume-unchanged-revert = update-index --no-assume-unchanged
+	commit-everything = !git add -A && git commit
+	edit-config = config --global -e
+	init-commit = !git commit-everything -m 'Initial commit'
+	init-github = !git init && touch .gitignore && touch README.md && ${EDITOR:-vim} README.md && git init-commit
+	last = log -1 HEAD
+	list-assumed-unchanged = !git ls-files -v | grep -e "^[hsmrck]"
+	ls = status
 	new = "!f() { touch "$1"; ${EDITOR:-vim} "$1"; git add "$1"; }; f"
+	pl = !git prettylog
+	prettylog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	pushup = !git up && git push
+	unstage = reset HEAD --
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	update = !git stash && git up && git stash pop
+	uplog = !git up && git prettylog
 [core]
 	autocrlf = input
 	longpaths = true
