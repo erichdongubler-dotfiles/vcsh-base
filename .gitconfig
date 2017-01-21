@@ -10,6 +10,7 @@
 	assume-unchanged = update-index --assume-unchanged
 	assume-unchanged-revert = update-index --no-assume-unchanged
 	commit-everything = !git add -A && git commit
+	delta = diff --color-words --no-index
 	edit-config = config --global -e
 	init-commit = !git commit-everything -m 'Initial commit'
 	init-github = !git init && touch .gitignore && touch README.md && ${EDITOR:-vim} README.md && git init-commit
