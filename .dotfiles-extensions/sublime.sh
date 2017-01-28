@@ -7,3 +7,4 @@ function subl_create_project() {
 	mkdir -p .sublime
 	sed "s/Project/$project_name/" $TEMPLATE_FILE > "$project_file"
 }
+
