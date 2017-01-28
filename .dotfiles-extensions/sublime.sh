@@ -6,5 +6,17 @@ function subl_create_project() {
 	echo "Project file: $project_file"
 	mkdir -p .sublime
 	sed "s/Project/$project_name/" $TEMPLATE_FILE > "$project_file"
+	subl_add_workspaces_to_gitignore
+}
+
+function subl_add_workspaces_to_gitignore () {
+	local git_ignore_file='.gitignore'
+	local workspace_ignore_line='*.sublime-workspace'
+	if [ -f .gitignore ] && ! grep -q "$workspace_ignore_line" "$git_ignore_file"; then
+		echo "Adding Sublime workspaces to .gitignore"
+		echo "$workspace_ignore_line" >> "$git_ignore_file"
+	else
+		echo ".gitignore didn't exist or Sublime workspace ignore already there"
+	fi
 }
 
