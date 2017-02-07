@@ -12,12 +12,12 @@ export EDITOR=vim
 case $os in
 	"darwin")
 		export CLICOLOR=1
-		alias ll='ls -l'
+		alias ll='ls -l --time-style='"'+%d-%m-%Y %H:%M:%S'"
 	;;
 	*)
 		eval $(dircolors -b)
 		alias ls='ls --color=auto'
-		alias ll='ls -l --color=auto'
+		alias ll='ls -l --color=auto --time-style='"'+%d-%m-%Y %H:%M:%S'"
 	;;
 esac
 
