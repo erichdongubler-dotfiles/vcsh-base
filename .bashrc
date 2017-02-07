@@ -34,7 +34,7 @@ complete -cf sudo
 complete -cf man
 
 #Grep colors
-alias grep='grep -n --color=auto'
+alias grep='grep --color=auto'
 
 # Hook into the dotfiles management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
