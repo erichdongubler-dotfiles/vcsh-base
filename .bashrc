@@ -80,16 +80,16 @@ initial_login_print() {
 }
 initial_login_print
 
-# Load extensions
-DOTFILES_EXTENSIONS_FOLDER="$HOME/.dotfiles-extensions"
-reload_dotfiles_extensions () {
-	if [ -d "$DOTFILES_EXTENSIONS_FOLDER" ]; then
-		echo -e "\033[37mReloading extensions from \033[1;34m\"$DOTFILES_EXTENSIONS_FOLDER\"\033[00m"
-		for file in "$DOTFILES_EXTENSIONS_FOLDER"/*.sh; do
+# Load extension scripts
+DOTFILES_EXTENSION_SCRIPTS_DIRECTORY="$HOME/.dotfiles-extensions/scripts/"
+reload_dotfiles_extension_scripts () {
+	if [ -d "$DOTFILES_EXTENSION_SCRIPTS_DIRECTORY" ]; then
+		echo -e "\033[37mReloading extensions from \033[1;34m\"$DOTFILES_EXTENSION_SCRIPTS_DIRECTORY\"\033[00m"
+		for file in "$DOTFILES_EXTENSION_SCRIPTS_DIRECTORY"/*.sh; do
 			echo -e "  \033[37mLoading \033[1;34m${file##*/}\033[00m"
 			. "$file"
 		done
 	fi
 }
-reload_dotfiles_extensions
+reload_dotfiles_extension_scripts
 
