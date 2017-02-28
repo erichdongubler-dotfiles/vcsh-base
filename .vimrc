@@ -11,6 +11,7 @@ set tabstop=4
 
 "Other plugins
 execute pathogen#infect()
+map <C-k> :NERDTreeTabsToggle<CR>
 
 " Syntax highlighting
 colorscheme monokai
