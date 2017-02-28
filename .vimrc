@@ -15,6 +15,15 @@ execute pathogen#infect()
 " Syntax highlighting
 colorscheme monokai
 syntax enable
+if has("gui_running") "GVim-specific configuration
+	if has("gui_gtk2")
+		set guifont=Inconsolata\ 12
+	elseif has("gui_macvim")
+		set guifont=Menlo\ Regular:h14
+	elseif has("gui_win32")
+		set guifont=Consolas:h13:cANSI
+	endif
+endif
 augroup markdown
 	au!
 	au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
