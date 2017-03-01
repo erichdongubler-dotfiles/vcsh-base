@@ -7,6 +7,8 @@ set incsearch
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·,
 set nowrap
 set shiftwidth=4
+set splitbelow
+set splitright
 set tabstop=4
 
 "Other plugins
