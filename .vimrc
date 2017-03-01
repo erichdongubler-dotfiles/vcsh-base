@@ -4,7 +4,7 @@ set autoindent
 set backspace=indent,eol,start
 set hlsearch
 set incsearch
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·,
 set nowrap
 set shiftwidth=4
 set tabstop=4
