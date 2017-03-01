@@ -11,7 +11,7 @@ set splitbelow
 set splitright
 set tabstop=4
 
-"Other plugins
+"Plugins
 execute pathogen#infect()
 "Navigation
 map <Leader>k :NERDTreeTabsToggle<CR>
@@ -20,7 +20,7 @@ let g:NERDTreeDirArrowCollapsible = '-'
 map <Leader>p :CtrlP<CR>
 map <Leader>r :CtrlPTag<CR>
 
-" Syntax highlighting
+"Syntax highlighting
 colorscheme monokai
 syntax enable
 if has("gui_running") "GVim-specific configuration
