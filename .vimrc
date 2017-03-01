@@ -19,6 +19,7 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 map <Leader>p :CtrlP<CR>
 map <Leader>r :CtrlPTag<CR>
+let g:ctrlp_follow_symlinks = 1
 
 "Syntax highlighting
 colorscheme monokai
