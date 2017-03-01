@@ -13,7 +13,10 @@ set tabstop=4
 
 "Other plugins
 execute pathogen#infect()
+"Navigation
 map <Leader>k :NERDTreeTabsToggle<CR>
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 map <Leader>p :CtrlP<CR>
 map <Leader>r :CtrlPTag<CR>
 
