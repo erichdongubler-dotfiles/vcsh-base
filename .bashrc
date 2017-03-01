@@ -7,6 +7,7 @@ os=${OSTYPE//[0-9.]/}
 
 #Editor setting, this is important for meee
 export EDITOR=vim
+alias :q='exit'
 
 #ls colors
 case $os in
