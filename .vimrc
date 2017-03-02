@@ -11,8 +11,9 @@ set splitbelow
 set splitright
 set tabstop=4
 
-"Plugins
+"Plugin loader
 execute pathogen#infect()
+
 "Navigation
 map <Leader>k :NERDTreeTabsToggle<CR>
 let g:NERDTreeDirArrowExpandable = '+'
