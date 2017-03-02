@@ -25,7 +25,9 @@ let g:ctrlp_follow_symlinks = 1
 "Syntax highlighting
 colorscheme monokai
 syntax enable
-if has("gui_running") "GVim-specific configuration
+
+"GVim-specific config
+if has("gui_running")
 	if has("gui_gtk2")
 		set guifont=Inconsolata\ 12
 	elseif has("gui_macvim")
@@ -34,6 +36,11 @@ if has("gui_running") "GVim-specific configuration
 		set guifont=Consolas:h13:cANSI
 	endif
 endif
+
+"Status line (vim-airline)
+set laststatus=2 "Make airline always appear
+
+"Markdown
 augroup markdown
 	au!
 	au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
