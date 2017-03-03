@@ -26,6 +26,8 @@ let g:ctrlp_follow_symlinks = 1
 colorscheme monokai
 syntax enable
 set tags=./.tags;,~/.vimtags
+let g:easytags_dynamic_files = 1
+let g:easytags_opts = ['--tag-relative=yes']
 
 "GVim-specific config
 if has("gui_running")
