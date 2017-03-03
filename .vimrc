@@ -53,6 +53,9 @@ endif
 "Status line (vim-airline)
 set laststatus=2 "Make airline always appear
 
+"Pane resizing
+let g:winresizer_start_key = '<Leader>b'
+
 "Markdown
 augroup markdown
 	au!

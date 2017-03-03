@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/vim-shell"]
 	path = .vim/bundle/vim-shell
 	url = https://github.com/xolox/vim-shell.git
+[submodule ".vim/bundle/winresizer"]
+	path = .vim/bundle/winresizer
+	url = https://github.com/simeji/winresizer
