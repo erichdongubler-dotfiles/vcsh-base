@@ -21,6 +21,7 @@ let g:NERDTreeDirArrowCollapsible = '-'
 map <Leader>p :CtrlP<CR>
 map <Leader>r :CtrlPTag<CR>
 let g:ctrlp_follow_symlinks = 1
+nmap <Leader>t :TagbarToggle<CR>
 
 "Syntax highlighting
 colorscheme monokai
