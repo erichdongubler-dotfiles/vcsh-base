@@ -18,6 +18,7 @@ execute pathogen#infect()
 map <Leader>k :NERDTreeTabsToggle<CR>
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+let g:nerdtree_tabs_open_on_gui_startup = 2
 map <Leader>p :CtrlP<CR>
 map <Leader>r :CtrlPTag<CR>
 let g:ctrlp_follow_symlinks = 1
