@@ -31,6 +31,13 @@ let g:easytags_async = 1
 let g:easytags_dynamic_files = 1
 let g:easytags_opts = ['--tag-relative=yes']
 
+"Linting
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_rust_checkers = ['rustc']
+
 "GVim-specific config
 if has("gui_running")
 	if has("gui_gtk2")
