@@ -27,6 +27,7 @@ nmap <Leader>t :TagbarToggle<CR>
 colorscheme monokai
 syntax enable
 set tags=./.tags;,~/.vimtags
+let g:easytags_async = 1
 let g:easytags_dynamic_files = 1
 let g:easytags_opts = ['--tag-relative=yes']
 
