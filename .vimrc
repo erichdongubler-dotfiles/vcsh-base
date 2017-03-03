@@ -25,6 +25,7 @@ let g:ctrlp_follow_symlinks = 1
 "Syntax highlighting
 colorscheme monokai
 syntax enable
+set tags=./.tags;,~/.vimtags
 
 "GVim-specific config
 if has("gui_running")
