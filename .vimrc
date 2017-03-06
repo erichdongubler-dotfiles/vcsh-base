@@ -15,13 +15,17 @@ set tabstop=4
 execute pathogen#infect()
 
 "Navigation
+" NERDTree
 map <Leader>k :NERDTreeTabsToggle<CR>
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+" NERDTreeTabs
 let g:nerdtree_tabs_open_on_gui_startup = 2
+" CtrlP
 map <Leader>p :CtrlP<CR>
 map <Leader>r :CtrlPTag<CR>
 let g:ctrlp_follow_symlinks = 1
+" Tagbar
 nmap <Leader>t :TagbarToggle<CR>
 
 "Syntax highlighting
