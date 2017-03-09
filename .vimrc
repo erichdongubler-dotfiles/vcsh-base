@@ -1,8 +1,10 @@
 "Editor behavior/keybinds
 autocmd BufWritePre * %s/\s\+$//e "trim trailing whitespace on save
+filetype plugin indent on
 set autoindent
 set backspace=indent,eol,start
 set hlsearch
+set hidden
 set incsearch
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·,
 set nowrap
@@ -13,6 +15,16 @@ set tabstop=4
 
 "Plugin loader
 execute pathogen#infect()
+
+"Kill the need to use shift for :commands
+nnoremap ; :
+
+"Overwrite files that need sudo
+cmap w!! w !sudo tee % >/dev/null
+
+".vimrc reloading/editing
+nmap <silent> <leader>ve :vsp $MYVIMRC<CR>
+nmap <silent> <leader>vs :so $MYVIMRC<CR>
 
 "Navigation
 " NERDTree
@@ -71,6 +83,7 @@ endif
 let g:localvimrc_persistent = 1
 
 "Status line (vim-airline)
+let g:airline#extensions#tabline#enabled = 1
 set laststatus=2 "Make airline always appear
 
 "Pane resizing
