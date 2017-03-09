@@ -65,6 +65,9 @@ if has("gui_running")
 	endif
 endif
 
+"Project-specific config
+let g:localvimrc_persistent = 1
+
 "Status line (vim-airline)
 set laststatus=2 "Make airline always appear
 
