@@ -23,8 +23,11 @@ let g:NERDTreeDirArrowCollapsible = '-'
 let g:nerdtree_tabs_open_on_gui_startup = 2
 " CtrlP
 map <Leader>p :CtrlP<CR>
-map <Leader>r :CtrlPTag<CR>
+map <Leader>r :CtrlPBufTag<CR>
+map <Leader>R :CtrlPTag<CR>
+map <Leader>/ :CtrlPLine<CR>
 let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_extensions = ['buffertag', 'line']
 " Tagbar
 nmap <Leader>t :TagbarToggle<CR>
 " incsearch.vim
