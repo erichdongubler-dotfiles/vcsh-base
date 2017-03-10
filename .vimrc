@@ -59,6 +59,9 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
+"delimitMate
+let g:delimitMate_expand_cr = 1
+
 "Syntax highlighting
 colorscheme monokai
 syntax enable
