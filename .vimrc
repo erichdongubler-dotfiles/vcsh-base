@@ -19,6 +19,11 @@ execute pathogen#infect()
 "Kill the need to use shift for :commands
 nnoremap ; :
 
+"Alias Q to do what we really want
+command! Q :q
+command! Qa :qa
+command! QA :qa
+
 "Overwrite files that need sudo
 cmap w!! w !sudo tee % >/dev/null
 
