@@ -5,6 +5,8 @@
 
 os=${OSTYPE//[0-9.]/}
 
+alias bashrc='vim $HOME/.bashrc'
+
 #Editor setting, this is important for meee
 export EDITOR=vim
 alias :q='exit'
