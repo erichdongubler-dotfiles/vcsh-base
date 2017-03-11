@@ -68,8 +68,9 @@ colorscheme monokai
 syntax enable
 set tags=./.tags;,~/.vimtags
 let g:easytags_async = 1
-let g:easytags_dynamic_files = 1
+let g:easytags_dynamic_files = 2
 let g:easytags_opts = ['--tag-relative=yes']
+set cpo+=d
 
 "Linting
 let g:syntastic_always_populate_loc_list = 1
