@@ -8,6 +8,7 @@ os=${OSTYPE//[0-9.]/}
 #Editor setting, this is important for meee
 export EDITOR=vim
 alias :q='exit'
+alias vimrc='vim $HOME/.vimrc'
 
 #ls colors
 case $os in
