@@ -7,11 +7,12 @@ git_init_custom () {
 	fi
 
 	git init
+	echo ".tags" >> .gitignore
 	read -p "Enter the name of your project: " project_name
 	for template in "$@"; do
 		local template_directory=`echo "$TEMPLATES_DIRECTORY/$template"| sed 's/\/\//\//'`
 		if [ -d "$template_directory" ]; then
-			cp -r "$template_directory"/. .
+			cp -r "$template_directory" .
 		fi
 
 		find . \( -path "./.git" \) -prune -o -type f -exec sed -i "s/\$PROJECT/$project_name/g" '{}' \; # Replace $PROJECT placeholders in the template
