@@ -82,3 +82,6 @@
 [submodule ".vim/bundle/DidYouMean"]
 	path = .vim/bundle/DidYouMean
 	url = https://github.com/EinfachToll/DidYouMean.git
+[submodule ".vim/bundle/ZoomWin"]
+	path = .vim/bundle/ZoomWin
+	url = https://github.com/vim-scripts/ZoomWin.git
