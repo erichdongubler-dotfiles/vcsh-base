@@ -41,7 +41,7 @@ complete -cf man
 alias grep='grep --color=auto'
 
 # Hook into the dotfiles management
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
 #Nice binds for history shortcuts
 bind '"\033[A": history-search-backward'
@@ -84,12 +84,16 @@ initial_login_print() {
 }
 initial_login_print
 
+DOTFILES_DIRECTORY="$HOME/.dotfiles"
+export DOTFILES_DIRECTORY
+
 # Load extension scripts
-DOTFILES_EXTENSION_SCRIPTS_DIRECTORY="$HOME/.dotfiles-extensions/scripts/"
+DOTFILES_SCRIPTS_DIRECTORY="$DOTFILES_DIRECTORY/scripts/"
+export DOTFILES_SCRIPTS_DIRECTORY
 reload_dotfiles_extension_scripts () {
-	if [ -d "$DOTFILES_EXTENSION_SCRIPTS_DIRECTORY" ]; then
-		echo -e "\033[37mReloading extensions from \033[1;34m\"$DOTFILES_EXTENSION_SCRIPTS_DIRECTORY\"\033[00m"
-		for file in "$DOTFILES_EXTENSION_SCRIPTS_DIRECTORY"/*.sh; do
+	if [ -d "$DOTFILES_SCRIPTS_DIRECTORY" ]; then
+		echo -e "\033[37mReloading extensions from \033[1;34m\"$DOTFILES_SCRIPTS_DIRECTORY\"\033[00m"
+		for file in "$DOTFILES_SCRIPTS_DIRECTORY"/*.sh; do
 			echo -e "  \033[37mLoading \033[1;34m${file##*/}\033[00m"
 			. "$file"
 		done

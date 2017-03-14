@@ -15,7 +15,7 @@
 	dw = !git diff-words
 	edit-config = config --global -e
 	init-commit = !git commit-everything -m 'Initial commit'
-	start = !"$HOME/.dotfiles-extensions/scripts/git/init_custom.sh"
+	start = !"$DOTFILES_SCRIPTS_DIRECTORY/git/init_custom.sh"
 	last = log -1 HEAD
 	list-assumed-unchanged = !git ls-files -v | grep -e "^[hsmrck]"
 	ls = status

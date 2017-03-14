@@ -1,5 +1,5 @@
 git_init_custom () {
-	local TEMPLATES_DIRECTORY="$HOME/.dotfiles-extensions/templates/git"
+	local TEMPLATES_DIRECTORY="$DOTFILES_DIRECTORY/templates/git"
 
 	if ! [ -d "$TEMPLATES_DIRECTORY" ]; then
 		echo "ERROR: No templates directory found at \"$TEMPLATES_DIRECTORY\""
