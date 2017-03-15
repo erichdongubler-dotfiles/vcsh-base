@@ -7,7 +7,7 @@ set diffopt+=vertical
 set hlsearch
 set hidden
 set incsearch
-set listchars=eol:Â¬,tab:>-,trail:~,extends:>,precedes:<,space:Â·,
+set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·,
 set nowrap
 set shiftwidth=4
 set splitbelow
