@@ -85,10 +85,12 @@ let g:delimitMate_expand_cr = 1
 "Syntax highlighting
 colorscheme monokai
 syntax enable
+" Tags config
 set tags=./.tags;,~/.vimtags
 let g:easytags_async = 1
 let g:easytags_dynamic_files = 2
 let g:easytags_opts = ['--tag-relative=yes']
+let g:easytags_resolve_links = 1
 set cpo+=d
 
 "Linting
