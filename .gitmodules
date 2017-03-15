@@ -88,6 +88,9 @@
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/vim-ctrlp-tjump"]
+	path = .vim/bundle/vim-ctrlp-tjump
+	url = https://github.com/ivalkeen/vim-ctrlp-tjump.git
 [submodule ".vim/bundle/vim-unimpaired"]
 	path = .vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git

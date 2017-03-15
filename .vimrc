@@ -92,6 +92,10 @@ let g:easytags_dynamic_files = 2
 let g:easytags_opts = ['--tag-relative=yes']
 let g:easytags_resolve_links = 1
 set cpo+=d
+" ctrlp-tjump extension
+let g:ctrlp_tjump_only_silent = 1
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
 "Linting
 let g:syntastic_always_populate_loc_list = 1
