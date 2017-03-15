@@ -22,7 +22,6 @@ nnoremap ; :
 
 "Alias Q to do what we really want
 command! Q :q
-command! q1 :q!
 command! Qa :qa
 command! QA :qa
 
