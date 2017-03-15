@@ -34,6 +34,9 @@ nmap <silent> <leader>ve :vsp $MYVIMRC<CR>
 nmap <silent> <leader>vs :so $MYVIMRC<CR>
 
 "Navigation
+" Buffer nav
+map <C-PageUp> :bp<CR>
+map <C-PageDown> :bn<CR>
 " Timestamp bindings
 :nnoremap <F5> "=strftime("%F")<CR>P
 :inoremap <F5> <C-R>=strftime("%F")<CR>
