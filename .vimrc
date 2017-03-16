@@ -78,6 +78,24 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+" ack.vim
+nnoremap <Leader>F :Ack!<Space>
+
+" Give all things searching a serious boost
+if executable('rg')
+	set grepprg=rg\ --color=never
+	let g:ackprg = 'rg --vimgrep --no-heading'
+" 	let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+" 	let g:ctrlp_use_caching = 0
+else
+	echom 'ripgrep not found, using slower file searching'
+endif
+
+if has('python')
+	let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+else
+	echom 'python not found, using slower fuzzy finder'
+endif
 
 "delimitMate
 let g:delimitMate_expand_cr = 1
@@ -86,12 +104,10 @@ let g:delimitMate_expand_cr = 1
 colorscheme monokai
 syntax enable
 " Tags config
-set tags=./.tags;,~/.vimtags
+set tags=.tags,~/.vimtags
 let g:easytags_async = 1
 let g:easytags_dynamic_files = 2
-let g:easytags_opts = ['--tag-relative=yes']
 let g:easytags_resolve_links = 1
-set cpo+=d
 " ctrlp-tjump extension
 let g:ctrlp_tjump_only_silent = 1
 nnoremap <c-]> :CtrlPtjump<cr>
