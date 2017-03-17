@@ -112,3 +112,6 @@
 [submodule ".vim/bundle/vim-mkdir"]
 	path = .vim/bundle/vim-mkdir
 	url = https://github.com/pbrisbin/vim-mkdir.git
+[submodule ".vim/bundle/vim-coloresque"]
+	path = .vim/bundle/vim-coloresque
+	url = https://github.com/gko/vim-coloresque.git
