@@ -3,6 +3,7 @@ autocmd BufWritePre * %s/\s\+$//e "trim trailing whitespace on save
 filetype plugin indent on
 set autoindent
 set backspace=indent,eol,start
+set diffopt+=vertical
 set hlsearch
 set hidden
 set incsearch
