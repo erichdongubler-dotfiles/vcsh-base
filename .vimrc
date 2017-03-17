@@ -110,9 +110,12 @@ let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 " ctrlp-tjump extension
 let g:ctrlp_tjump_only_silent = 1
-nnoremap <c-]> :CtrlPtjump<cr>
-vnoremap <c-]> :CtrlPtjumpVisual<cr>
-
+nnoremap <c-]> :CtrlPtjump<CR>
+vnoremap <c-]> :CtrlPtjumpVisual<CR>
+" Line numbers
+nnoremap <Leader>n :set number!<CR>
+" List
+nnoremap <Leader>l :set list!<CR>
 "Linting
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -138,7 +141,7 @@ let g:airline#extensions#tabline#enabled = 1
 set laststatus=2 "Make airline always appear
 
 "Pane resizing
-let g:winresizer_start_key = '<Leader>b'
+let g:winresizer_start_key = '<Leader>e'
 
 "Markdown
 let g:tagbar_type_markdown = {
