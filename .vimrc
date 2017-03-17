@@ -160,3 +160,8 @@ augroup sublime
 	au BufNewFile,BufRead *.sublime-project,*.sublime-build,*.sublime-snippet setlocal filetype=json
 augroup END
 
+augroup tags
+	au!
+	au BufNewFile,BufRead .tags setlocal filetype=tags
+augroup END
+
