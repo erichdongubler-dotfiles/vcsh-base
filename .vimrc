@@ -43,6 +43,16 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 " NERDTreeTabs
 let g:nerdtree_tabs_open_on_gui_startup = 2
+" NERDTree_plugin_open
+if has('unix')
+  if has('mac')       " osx
+    let g:nerdtree_plugin_open_cmd = 'open'
+  else                " linux, bsd, etc
+    let g:nerdtree_plugin_open_cmd = 'xdg-open'
+  endif
+elseif has('win32') || has('win64')
+  let g:nerdtree_plugin_open_cmd = 'explorer'
+endif
 " CtrlP
 map <Leader>p :CtrlP<CR>
 map <Leader>P :CtrlPBuffer<CR>

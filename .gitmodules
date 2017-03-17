@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/vim-unimpaired"]
 	path = .vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule ".vim/bundle/vim-nerdtree_plugin_open"]
+	path = .vim/bundle/vim-nerdtree_plugin_open
+	url = https://github.com/aufgang001/vim-nerdtree_plugin_open.git
