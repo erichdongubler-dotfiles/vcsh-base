@@ -2,6 +2,8 @@
 --exclude=.hg
 --exclude=log
 --exclude=tmp
+--exclude=bin
+--exclude=dist
 
 --langdef=markdown
 --langmap=markdown:.mkd
