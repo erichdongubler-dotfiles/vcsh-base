@@ -97,3 +97,9 @@
 [submodule ".vim/bundle/vim-nerdtree_plugin_open"]
 	path = .vim/bundle/vim-nerdtree_plugin_open
 	url = https://github.com/aufgang001/vim-nerdtree_plugin_open.git
+[submodule ".vim/bundle/vim-abolish"]
+	path = .vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
+[submodule ".vim/bundle/vim-repeat"]
+	path = .vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
