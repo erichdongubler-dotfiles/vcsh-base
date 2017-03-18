@@ -6,10 +6,12 @@ set backspace=indent,eol,start
 set diffopt+=vertical
 set hlsearch
 set hidden
+set ignorecase
 set incsearch
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·,
 set nowrap
 set shiftwidth=4
+set smartcase
 set splitbelow
 set splitright
 set tabstop=4
