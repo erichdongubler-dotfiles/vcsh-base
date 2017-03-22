@@ -115,3 +115,6 @@
 [submodule ".vim/bundle/vim-coloresque"]
 	path = .vim/bundle/vim-coloresque
 	url = https://github.com/gko/vim-coloresque.git
+[submodule ".vim/bundle/vim-expand-region"]
+	path = .vim/bundle/vim-expand-region
+	url = https://github.com/terryma/vim-expand-region.git
