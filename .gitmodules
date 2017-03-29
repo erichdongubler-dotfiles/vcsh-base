@@ -139,3 +139,6 @@
 [submodule ".tmux/plugins/tmux-prefix-highlight"]
 	path = .tmux/plugins/tmux-prefix-highlight
 	url = https://github.com/tmux-plugins/tmux-prefix-highlight.git
+[submodule ".tmux/plugins/tmux-pain-control"]
+	path = .tmux/plugins/tmux-pain-control
+	url = https://github.com/tmux-plugins/tmux-pain-control.git
