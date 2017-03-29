@@ -121,3 +121,9 @@
 [submodule ".vim/bundle/rename.vim"]
 	path = .vim/bundle/rename.vim
 	url = https://github.com/danro/rename.vim.git
+[submodule "C:/Users/erich.gubler/.tmux/plugins/tpm"]
+	path = C:/Users/erich.gubler/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule ".tmux/plugins/tmux-sensible"]
+	path = .tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
