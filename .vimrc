@@ -105,6 +105,26 @@ let g:delimitMate_expand_cr = 1
 "Syntax highlighting
 colorscheme monokai
 syntax enable
+" Fix terminal-specific settings so we get the correct colors and keybinds
+"set term=xterm-256color
+set t_ut=
+if &term =~ '^screen'
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+	map <Esc>[B <Down>
+endif
+" GVim-specific config
+if has("gui_running")
+	if has("gui_gtk2")
+		set guifont=Inconsolata\ 12
+	elseif has("gui_macvim")
+		set guifont=Menlo\ Regular:h14
+	elseif has("gui_win32")
+		set guifont=Consolas:h13:cANSI
+	endif
+endif
 " Tags config
 set tags=.tags,~/.vimtags
 let g:easytags_async = 1
@@ -123,17 +143,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_rust_checkers = ['rustc']
-
-"GVim-specific config
-if has("gui_running")
-	if has("gui_gtk2")
-		set guifont=Inconsolata\ 12
-	elseif has("gui_macvim")
-		set guifont=Menlo\ Regular:h14
-	elseif has("gui_win32")
-		set guifont=Consolas:h13:cANSI
-	endif
-endif
 
 "Project-specific config
 let g:localvimrc_persistent = 1
