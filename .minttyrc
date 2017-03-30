@@ -1,0 +1,7 @@
+AllowBlinking=yes
+AllowSetSelection=true
+BoldAsFont=-1
+CtrlShiftShortcuts=yes
+CursorType=block
+Font=Consolas
+FontHeight=13
