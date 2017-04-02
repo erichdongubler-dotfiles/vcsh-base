@@ -9,6 +9,7 @@ set hidden
 set ignorecase
 set incsearch
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·,
+set nolinebreak
 set nowrap
 set shiftwidth=4
 set smartcase
@@ -147,6 +148,12 @@ vnoremap <c-]> :CtrlPtjumpVisual<CR>
 nnoremap <Leader>n :set number!<CR>
 " List
 nnoremap <Leader>l :set list!<CR>
+" Wrapping
+fun! ToggleWordWrap()
+	set wrap!
+	set linebreak!
+endfun
+nnoremap <Leader>w :call ToggleWordWrap()<CR>
 "Linting
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
