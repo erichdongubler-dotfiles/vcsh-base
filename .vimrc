@@ -34,6 +34,15 @@ cmap w!! w !sudo tee % >/dev/null
 nmap <silent> <leader>ve :vsp $MYVIMRC<CR>
 nmap <silent> <leader>vs :so $MYVIMRC<CR>
 
+"CLI convenience binds
+fun! SilentCommand()
+	let command = input('Type command:')
+	exec 'silent !' . command
+	redraw!
+endfun
+nmap <Leader>! :call SilentCommand()<CR>
+nmap <Leader>1 :call SilentCommand()<CR>
+
 "Navigation
 " Buffer nav
 map <C-PageUp> :bp<CR>
