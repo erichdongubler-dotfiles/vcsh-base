@@ -1,3 +1,4 @@
+.*.swp
+.dotfiles.git
 .tags
 tags
-.dotfiles.git
