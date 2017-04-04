@@ -3,12 +3,14 @@ autocmd BufWritePre * %s/\s\+$//e "trim trailing whitespace on save
 filetype plugin indent on
 set autoindent
 set backspace=indent,eol,start
+set breakindentopt=shift:2
 set diffopt+=vertical
 set hlsearch
 set hidden
 set ignorecase
 set incsearch
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·,
+set nobreakindent
 set nolinebreak
 set nowrap
 set shiftwidth=4
@@ -152,6 +154,7 @@ nnoremap <Leader>l :set list!<CR>
 fun! ToggleWordWrap()
 	set wrap!
 	set linebreak!
+	set breakindent!
 endfun
 nnoremap <Leader>w :call ToggleWordWrap()<CR>
 "Linting
