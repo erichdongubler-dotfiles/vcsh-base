@@ -63,13 +63,13 @@ let g:NERDTreeDirArrowCollapsible = '-'
 let g:nerdtree_tabs_open_on_gui_startup = 2
 " NERDTree_plugin_open
 if has('unix')
-  if has('mac')       " osx
-    let g:nerdtree_plugin_open_cmd = 'open'
-  else                " linux, bsd, etc
-    let g:nerdtree_plugin_open_cmd = 'xdg-open'
-  endif
+	if has('mac') " osx
+		let g:nerdtree_plugin_open_cmd = 'open'
+	else " linux, bsd, etc
+		let g:nerdtree_plugin_open_cmd = 'xdg-open'
+	endif
 elseif has('win32') || has('win64')
-  let g:nerdtree_plugin_open_cmd = 'explorer'
+	let g:nerdtree_plugin_open_cmd = 'explorer'
 endif
 " CtrlP
 map <Leader>p :CtrlP<CR>
@@ -99,8 +99,8 @@ nnoremap <Leader>F :Ack!<Space>
 if executable('rg')
 	set grepprg=rg\ --color=never\ --follow
 	let g:ackprg = 'rg --vimgrep --follow --no-heading'
-" 	let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-" 	let g:ctrlp_use_caching = 0
+"	let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+"	let g:ctrlp_use_caching = 0
 else
 	echom 'ripgrep not found, using slower file searching'
 endif
@@ -121,10 +121,10 @@ syntax enable
 "set term=xterm-256color
 set t_ut=
 if &term =~ '^screen'
-    execute "set <xUp>=\e[1;*A"
-    execute "set <xDown>=\e[1;*B"
-    execute "set <xRight>=\e[1;*C"
-    execute "set <xLeft>=\e[1;*D"
+	execute "set <xUp>=\e[1;*A"
+	execute "set <xDown>=\e[1;*B"
+	execute "set <xRight>=\e[1;*C"
+	execute "set <xLeft>=\e[1;*D"
 	map <Esc>[B <Down>
 endif
 " GVim-specific config
@@ -175,12 +175,12 @@ let g:winresizer_start_key = '<Leader>e'
 
 "Markdown
 let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
-    \ ]
+	\ 'ctagstype' : 'markdown',
+	\ 'kinds' : [
+		\ 'h:Heading_L1',
+		\ 'i:Heading_L2',
+		\ 'k:Heading_L3'
+	\ ]
 \ }
 augroup markdown
 	au!
