@@ -1,11 +1,19 @@
 [user]
 	email = erichdongubler@gmail.com
 	name = Erich Gubler
+[pull]
+	ff = only
 [push]
 	default = simple
 [merge]
 	ff = only
 	tool = kdiff3
+[rebase]
+	autostash = true
+[stash]
+	autostash = true
+[log]
+	decorate = full
 [alias]
 	assume-unchanged = update-index --assume-unchanged
 	assume-unchanged-revert = update-index --no-assume-unchanged
