@@ -1,3 +1,19 @@
+fun! s:create_new_post_plug_config()
+	let context = { 'tasks': [] }
+	fun context.run() dict
+		for task in self.tasks
+			call function(task)()
+		endfor
+	endfun
+	fun context.add_task(task) dict
+		call add(self.tasks, a:task)
+	endfun
+	return context
+endfun
+
+let s:post_plug_config = s:create_new_post_plug_config()
+call s:post_plug_config.run()
+
 call plug#begin('~/.vim/bundle')
 
 Plug 'dyng/ctrlsf.vim'
@@ -65,10 +81,24 @@ Plug 'gelguy/cmd2.vim'
 " Search
 Plug 'haya14busa/incsearch.vim'
 
-" Syntax coloring
+" Syntax coloring: scheme and font
 Plug 'crusoexia/vim-monokai'
+if has("gui_running")
+	if has("gui_gtk2")
+		set guifont=Inconsolata\ 12
+	elseif has("gui_macvim")
+		set guifont=Menlo\ Regular:h14
+	elseif has("gui_win32")
+		set guifont=Consolas:h13:cANSI
+	endif
+endif
+fun! s:configure_colors()
+	colorscheme monokai
+endfun
+call s:post_plug_config.add_task('s:configure_colors')
 
 call plug#end()
+call s:post_plug_config.run()
 
 aug QFClose
 	au!
@@ -86,18 +116,6 @@ if &term =~ '^screen'
 	map <Esc>[B <Down>
 endif
 set t_Co=256
-
-" Set the color scheme and font
-colorscheme monokai
-if has("gui_running")
-	if has("gui_gtk2")
-		set guifont=Inconsolata\ 12
-	elseif has("gui_macvim")
-		set guifont=Menlo\ Regular:h14
-	elseif has("gui_win32")
-		set guifont=Consolas:h13:cANSI
-	endif
-endif
 
 " Buffer options
 set hidden
