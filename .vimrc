@@ -74,6 +74,9 @@ Plug 'jtratner/vim-flavored-markdown'
 " Rust
 Plug 'rust-lang/rust.vim'
 
+" C#
+Plug 'OrangeT/vim-csharp'
+
 " Orgmode
 Plug 'jceb/vim-orgmode' | Plug 'tpope/vim-speeddating'
 Plug 'gelguy/cmd2.vim'
@@ -82,7 +85,10 @@ Plug 'gelguy/cmd2.vim'
 Plug 'haya14busa/incsearch.vim'
 
 " Syntax coloring: scheme and font
-Plug 'crusoexia/vim-monokai'
+Plug 'pangloss/vim-javascript'
+
+Plug 'octol/vim-cpp-enhanced-highlight'
+
 if has("gui_running")
 	if has("gui_gtk2")
 		set guifont=Inconsolata\ 12
@@ -92,6 +98,7 @@ if has("gui_running")
 		set guifont=Consolas:h13:cANSI
 	endif
 endif
+Plug 'crusoexia/vim-monokai'
 fun! s:configure_colors()
 	colorscheme monokai
 endfun
