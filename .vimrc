@@ -78,6 +78,8 @@ Plug 'rust-lang/rust.vim'
 " C#
 Plug 'OrangeT/vim-csharp'
 
+Plug 'cespare/vim-toml'
+
 " Orgmode
 Plug 'jceb/vim-orgmode' | Plug 'tpope/vim-speeddating'
 Plug 'gelguy/cmd2.vim'
