@@ -198,15 +198,21 @@ map g# <Plug>(incsearch-nohl-g#)
 
 nnoremap <Leader>F :CtrlSF<Space>
 let g:ctrlsf_mapping = {
-    \ "next": "n",
-    \ "prev": "N",
-    \ }
+			\ "next": "n",
+			\ "prev": "N",
+			\ }
 nnoremap <Leader>f :CtrlSFToggle<CR>
 
 " EDITING
 
 " Trim trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
+function! <SID>StripTrailingWhitespaces()
+	let l = line(".")
+	let c = col(".")
+	%s/\s\+$//e
+	call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Use Ctrl-Enter to go to a new line
 imap <C-CR> <Esc>o
