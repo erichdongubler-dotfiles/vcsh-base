@@ -110,6 +110,9 @@ call s:post_plug_config.add_task('s:configure_colors')
 call plug#end()
 call s:post_plug_config.run()
 
+" Normally Pathogen would do this, but we like VimPlug. :)
+:command Helptags call plug#helptags()
+
 aug QFClose
 	au!
 	au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
