@@ -15,6 +15,7 @@ call plug#begin('~/.vim/bundle')
 let s:post_plug_config = s:create_new_post_plug_config()
 
 " Bindings for vanilla vim
+let maplocalleader = '|'
 "   Vim config manipulation
 let $VIMHOME = $HOME."/.vim"
 nmap <silent> <leader>ve :vsp $VIMHOME<CR>
@@ -29,6 +30,8 @@ command! Qa :qa
 command! QA :qa
 "   Overwrite files that need sudo
 cmap w!! w !sudo tee % >/dev/null
+"   Make Home go to the beginning of the indented line, not the line itself
+nnoremap <Home> ^
 "   Use Ctrl-Enter to go to a new line
 imap <C-CR> <Esc>o
 imap  <Esc>o
@@ -38,6 +41,9 @@ nmap <S-Del> dd
 imap <S-Del> <Esc>ddi
 "     Here, the bind only deletes the content of the lines, not the lines themselves
 vmap <S-Del> ^o$d
+"   Add some common line-ending shortcuts
+nnoremap <Leader>; <Esc>A;
+nnoremap <Leader>. <Esc>A.
 "   CLI convenience binds
 fun! SilentCommand()
 	let command = input('Type command:')
@@ -125,12 +131,35 @@ aug QFClose
 	au!
 	au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
 aug END
-let maplocalleader = '|'
-nnoremap <Home> ^
 "  Line numbers
 set cursorline
 set number
 nnoremap <Leader>n :set number!<CR>
+" Distraction-free mode
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+function! s:goyo_enter()
+  silent !tmux set status off
+  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  call EnableWrap()
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+  call DisableWrap()
+endfunction
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+nnoremap <Leader>g :Goyo<CR>
 
 " Symbols
 set tags=.tags
@@ -207,6 +236,7 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'kopischke/vim-fetch'
 
 " Text manipulation intelligence
+
 "   Whitespace
 set autoindent
 set backspace=indent,eol,start
@@ -230,11 +260,27 @@ set breakindentopt=shift:2
 set nobreakindent
 set nolinebreak
 set nowrap
+let s:wrapToggled = 0
+fun! EnableWrap()
+	echo 'Enabled word wrap'
+	set wrap
+	set linebreak
+	set breakindent
+	let s:wrapToggled = 1
+endfun
+fun! DisableWrap()
+	echo 'Disabled word wrap'
+	set nowrap
+	set nolinebreak
+	set nobreakindent
+	let s:wrapToggled = 0
+endfun
 fun! ToggleWordWrap()
-	echo 'Toggled word wrap'
-	set wrap!
-	set linebreak!
-	set breakindent!
+	if wrapToggled
+		call EnableWrap()
+	else
+		call DisableWrap()
+	endif
 endfun
 nnoremap <Leader>w :call ToggleWordWrap()<CR>
 "     Trim trailing whitespace on save
@@ -285,6 +331,26 @@ set incsearch
 set smartcase
 highlight clear Search
 highlight Search gui=underline cterm=underline
+
+" File navigator
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+let g:nerdtree_tabs_open_on_gui_startup = 2
+map <Leader>k :NERDTreeTabsToggle<CR>
+
+if has('unix') && !has("win32unix")
+	if has('mac') " osx
+		let g:nerdtree_plugin_open_cmd = 'open'
+	else " linux, bsd, etc
+		let g:nerdtree_plugin_open_cmd = 'xdg-open'
+	endif
+else
+	let g:nerdtree_plugin_open_cmd = 'explorer'
+endif
+
+" Fuzzy searching
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_extensions = ['buffertag', 'line']
 if executable('rg')
 	set grepprg=rg\ --color=never\ --follow
 else
