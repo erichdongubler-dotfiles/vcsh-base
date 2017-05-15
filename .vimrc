@@ -148,6 +148,7 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Navigation
 "  Buffer nav
+let maplocalleader = '|'
 map <C-PageUp> :bp<CR>
 map <C-PageDown> :bn<CR>
 
