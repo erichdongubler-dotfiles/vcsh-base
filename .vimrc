@@ -19,6 +19,8 @@ let s:post_plug_config = s:create_new_post_plug_config()
 let $VIMHOME = $HOME."/.vim"
 nmap <silent> <leader>ve :vsp $VIMHOME<CR>
 nmap <silent> <leader>vs :so $MYVIMRC<CR>
+set directory=$HOME/.vim/.swapfiles//
+set backupdir=$HOME/.vim/.backups//
 "   Kill the need to use shift for :commands
 nnoremap ; :
 "   Alias Q to do what we really want
