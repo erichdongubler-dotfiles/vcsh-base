@@ -66,7 +66,7 @@ if has("gui_running")
 	endif
 endif
 "    Fix terminal-specific settings so we get the correct colors and keybinds
-set term=xterm-256color
+" set term=xterm-256color
 set t_ut=
 if &term =~ '^screen'
 	execute "set <xUp>=\e[1;*A"
@@ -74,6 +74,8 @@ if &term =~ '^screen'
 	execute "set <xRight>=\e[1;*C"
 	execute "set <xLeft>=\e[1;*D"
 	map <Esc>[B <Down>
+	map <Esc>[5;5~ <PageUp>
+	map <Esc>[6;5~ <PageDown>
 endif
 set t_Co=256
 
