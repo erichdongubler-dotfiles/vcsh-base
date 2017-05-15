@@ -151,6 +151,7 @@ cmap w!! w !sudo tee % >/dev/null
 let maplocalleader = '|'
 map <C-PageUp> :bp<CR>
 map <C-PageDown> :bn<CR>
+nnoremap <Home> ^
 
 "  Line numbers
 set cursorline
