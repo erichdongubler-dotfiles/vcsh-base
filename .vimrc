@@ -251,8 +251,9 @@ Plug 'wellle/targets.vim'
 Plug 'peterrincker/vim-argumentative'
 "   HTML/XML textobjs
 Plug 'mattn/emmet-vim'
-Plug 'vim-textobj-xmlattr' | Plug 'vim-textobj-user'
+Plug 'whatyouhide/vim-textobj-xmlattr' | Plug 'kana/vim-textobj-user'
 Plug 'gko/vim-coloresque'
+Plug 'Valloric/MatchTagAlways'
 "    Misc
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
