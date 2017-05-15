@@ -242,7 +242,8 @@ vnoremap <S-Tab> <gv
 
 " Splitjoin functionality
 let g:splitjoin_split_mapping = ''
-nmap gj :SplitjoinSplit<CR>
+nnoremap <Leader>S :SplitjoinSplit<CR>
+nnoremap <Leader>J :SplitjoinJoin<CR>
 
 nmap <Leader>v <C-v>^o$
 
