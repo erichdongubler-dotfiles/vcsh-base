@@ -5,7 +5,7 @@ export DOTFILES_DIRECTORY="$HOME/.dotfiles"
 export DOTFILES_OS=${OSTYPE//[0-9.]/}
 
 # Hook into the dotfiles management
-alias dotfiles='git --git-dir="$DOTFILES_DIRECTORY.git/" --work-tree="$HOME"'
+alias .git='git --git-dir="$DOTFILES_DIRECTORY.git/" --work-tree="$HOME"'
 
 # Some information we may want up front
 initial_login_print() {
