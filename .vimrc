@@ -53,6 +53,7 @@ nmap <Leader>1 :call SilentCommand()<CR>
 " Project configuration
 Plug 'embear/vim-localvimrc'
 let g:localvimrc_persistent = 1
+let g:localvimrc_sandbox = 0
 
 " UI functionalities
 if has("gui_running")
