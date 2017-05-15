@@ -5,14 +5,14 @@ case "$DOTFILES_OS" in
 	"cygwin")
 		;;
 	*)
-		function fuzzy_find_dotfiles_script() {
+		function .fzf() {
 			pushd "$DOTFILES_SCRIPT_DIRECTORY" > /dev/null
 			ls */**.sh | fzf
 			popd > /dev/null
 		}
 
-		function dotfiles_source() {
-			local script="$(fuzzy_find_dotfiles_script)"
+		function .source() {
+			local script="$(.fzf)"
 			if [ -f "$script" ]; then
 				echo "Sourcing dotfiles script \"$script\""
 				pushd "$DOTFILES_SCRIPT_DIRECTORY" > /dev/null
@@ -22,9 +22,10 @@ case "$DOTFILES_OS" in
 				echo "No script selected (output was \"$script\")"
 			fi
 		}
+		alias ..='.source'
 
-		function dotfiles_link() {
-			local script="$(fuzzy_find_dotfiles_script)"
+		function .ln() {
+			local script="$(.fzf)"
 			if [ -f "$script" ]; then
 				echo "Linking dotfiles script \"$script\""
 				pushd "$DOTFILES_SCRIPT_DIRECTORY" > /dev/null
@@ -36,9 +37,6 @@ case "$DOTFILES_OS" in
 			fi
 
 		}
-
-		alias .source='dotfiles_source'
-		alias .link='dotfiles_link'
 		;;
 esac
 
