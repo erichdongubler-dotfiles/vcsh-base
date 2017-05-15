@@ -48,7 +48,7 @@ nmap <Leader>! :call SilentCommand()<CR>
 nmap <Leader>1 :call SilentCommand()<CR>
 
 " Normally Pathogen would do this, but we like VimPlug. :)
-:command Helptags call plug#helptags()
+:command! Helptags call plug#helptags()
 
 " Project configuration
 Plug 'embear/vim-localvimrc'
