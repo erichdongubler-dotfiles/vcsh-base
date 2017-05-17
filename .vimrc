@@ -276,10 +276,10 @@ fun! DisableWrap()
 	let s:wrapToggled = 0
 endfun
 fun! ToggleWordWrap()
-	if wrapToggled
-		call EnableWrap()
-	else
+	if s:wrapToggled
 		call DisableWrap()
+	else
+		call EnableWrap()
 	endif
 endfun
 nnoremap <Leader>w :call ToggleWordWrap()<CR>
