@@ -252,6 +252,7 @@ Plug 'peterrincker/vim-argumentative'
 "   HTML/XML textobjs
 Plug 'mattn/emmet-vim'
 Plug 'whatyouhide/vim-textobj-xmlattr' | Plug 'kana/vim-textobj-user'
+Plug 'thalesmello/vim-textobj-methodcall' | Plug 'kana/vim-textobj-user'
 Plug 'gko/vim-coloresque'
 Plug 'Valloric/MatchTagAlways'
 "    Misc
