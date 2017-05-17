@@ -86,6 +86,9 @@ if has("gui_running")
 	elseif has("gui_win32")
 		set guifont=Consolas:h13:cANSI
 	endif
+elseif has("nvim")
+	let g:Guifont="Consolas:h13:cANSI"
+	" GuiFont Consolas:h13:cANSI
 else
 	let g:default_cursor_escape = "\<Esc>[ q"
 	let g:blinking_ibeam_cursor_escape = "\<Esc>[5 q"
