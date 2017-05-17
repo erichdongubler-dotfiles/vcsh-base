@@ -82,8 +82,8 @@ if &term =~ '^screen'
 	execute "set <xRight>=\e[1;*C"
 	execute "set <xLeft>=\e[1;*D"
 	map <Esc>[B <Down>
-	map <Esc>[5;5~ <PageUp>
-	map <Esc>[6;5~ <PageDown>
+	map <Esc>[5;5~ <C-PageUp>
+	map <Esc>[6;5~ <C-PageDown>
 endif
 set t_Co=256
 
