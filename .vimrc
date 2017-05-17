@@ -331,31 +331,6 @@ set incsearch
 set smartcase
 highlight clear Search
 highlight Search gui=underline cterm=underline
-
-" File navigator
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-let g:nerdtree_tabs_open_on_gui_startup = 2
-map <Leader>k :NERDTreeTabsToggle<CR>
-
-if has('unix') && !has("win32unix")
-	if has('mac') " osx
-		let g:nerdtree_plugin_open_cmd = 'open'
-	else " linux, bsd, etc
-		let g:nerdtree_plugin_open_cmd = 'xdg-open'
-	endif
-else
-	let g:nerdtree_plugin_open_cmd = 'explorer'
-endif
-
-" Fuzzy searching
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_extensions = ['buffertag', 'line']
-if executable('rg')
-	set grepprg=rg\ --color=never\ --follow
-else
-	echom 'ripgrep not found, using slower file searching'
-endif
 map <Leader>h :%s/
 "   Better buffer search
 Plug 'haya14busa/incsearch.vim'
