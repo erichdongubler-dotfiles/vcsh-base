@@ -45,6 +45,10 @@ vmap <S-Del> ^o$d
 "   Add some common line-ending shortcuts
 nnoremap <Leader>; <Esc>A;
 nnoremap <Leader>. <Esc>A.
+Plug 'ErichDonGubler/vim-file-browser-integration'
+nnoremap <Leader>e :SelectCurrentFile<CR>
+nnoremap <Leader>x :OpenCurrentFile<CR>
+nnoremap <Leader>E :OpenCWD<CR>
 "   CLI convenience binds
 fun! SilentCommand()
 	let command = input('Type command:')
@@ -119,7 +123,7 @@ set splitbelow
 set splitright
 Plug 'vim-scripts/ZoomWin'
 Plug 'simeji/winresizer'
-let g:winresizer_start_key = '<Leader>e'
+let g:winresizer_start_key = '<Leader><CR>'
 "   Diffs
 set diffopt+=vertical
 "   Notes
@@ -219,16 +223,7 @@ map <Leader>K call <SID>clearFilesAndOpenNERDTree()
 Plug 'jistr/vim-nerdtree-tabs' | Plug 'scrooloose/nerdtree'
 let g:nerdtree_tabs_open_on_gui_startup = 2
 map <Leader>k :NERDTreeTabsToggle<CR>
-Plug 'aufgang001/vim-nerdtree_plugin_open' | Plug 'scrooloose/nerdtree'
-if has('unix') && !has("win32unix")
-	if has('mac') " osx
-		let g:nerdtree_plugin_open_cmd = 'open'
-	else " linux, bsd, etc
-		let g:nerdtree_plugin_open_cmd = 'xdg-open'
-	endif
-else
-	let g:nerdtree_plugin_open_cmd = 'explorer'
-endif
+Plug 'ErichDonGubler/nerdtree-plugin-open-in-file-browser' | Plug 'scrooloose/nerdtree'
 Plug 'ErichDonGubler/nerdtree-ctrlp-root' | Plug 'ctrlpvim/ctrlp.vim' | Plug 'scrooloose/nerdtree'
 "   Path/creation
 Plug 'EinfachToll/DidYouMean'
