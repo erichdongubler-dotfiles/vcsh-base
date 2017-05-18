@@ -15,6 +15,7 @@ call plug#begin('~/.vim/bundle')
 let s:post_plug_config = s:create_new_post_plug_config()
 
 " Bindings for vanilla vim
+set iskeyword-=.
 let maplocalleader = '|'
 "   Vim config manipulation
 let $VIMHOME = $HOME."/.vim"
