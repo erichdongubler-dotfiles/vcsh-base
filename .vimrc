@@ -50,13 +50,21 @@ nnoremap <Leader>e :SelectCurrentFile<CR>
 nnoremap <Leader>x :OpenCurrentFile<CR>
 nnoremap <Leader>E :OpenCWD<CR>
 "   CLI convenience binds
-fun! SilentCommand()
-	let command = input('Type command:')
-	exec 'silent !' . command
+fun! SilentCommand(command)
+	echom 'Executing silent command: "' . a:command . '"'
+	exec 'silent !' . a:command
 	redraw!
 endfun
-nmap <Leader>! :call SilentCommand()<CR>
-nmap <Leader>1 :call SilentCommand()<CR>
+function! PromptSilentCommand()
+	let l:command = input('Type command:')
+	if strln(l:command)
+		call SilentCommand(l:command)
+	else
+		echo 'No command specified, doing nothing'
+	endif
+endfun
+nmap <Leader>! :call PromptSilentCommand()<CR>
+nmap <Leader>1 :call PromptSilentCommand()<CR>
 
 " VimPlug
 let g:plug_window = 'enew'
