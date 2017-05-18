@@ -297,6 +297,7 @@ Plug 'peterrincker/vim-argumentative'
 Plug 'mattn/emmet-vim'
 Plug 'whatyouhide/vim-textobj-xmlattr' | Plug 'kana/vim-textobj-user'
 Plug 'thalesmello/vim-textobj-methodcall' | Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
 Plug 'gko/vim-coloresque'
 Plug 'Valloric/MatchTagAlways'
 "    Misc
