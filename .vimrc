@@ -188,7 +188,7 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_extensions = ['buffertag', 'line']
 if executable('rg')
-	let g:ctrlp_user_command = 'rg %s --files --color=never'
+	let g:ctrlp_user_command = 'rg %s --follow --files --color=never'
 	let g:ctrlp_use_caching = 0
 endif
 let g:ctrlp_map = '<Leader>p'
