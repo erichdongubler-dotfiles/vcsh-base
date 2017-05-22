@@ -361,7 +361,7 @@ function! s:configure_ctrlsf()
 endfun
 call s:post_plug_config.add_task('s:configure_ctrlsf')
 
-" Build/Linting system
+" Builds
 map <Leader>b :make<CR>
 Plug 'ErichDonGubler/ctrlp-compiler'
 map <Leader>B :CtrlPCompiler<CR>
@@ -377,12 +377,16 @@ else
 endif
 
 " Snippets
-let g:snipMate = get(g:, 'snipMate', {})
-let g:snipMate.snippet_version = 1
-Plug 'garbas/vim-snipmate' | Plug 'tomtom/tlib_vim' | Plug 'MarcWeber/vim-addon-mw-utils'
+if has('python')
+	Plug 'SirVer/ultisnips'
+else
+	Plug 'garbas/vim-snipmate' | Plug 'tomtom/tlib_vim' | Plug 'MarcWeber/vim-addon-mw-utils'
+	let g:snipMate = get(g:, 'snipMate', {})
+	let g:snipMate.snippet_version = 1
+endif
+Plug 'honza/vim-snippets'
 
 " Expanded language support
-Plug 'honza/vim-snippets'
 Plug 'jtratner/vim-flavored-markdown'
 augroup markdown
 	au!
