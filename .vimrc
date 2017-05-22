@@ -376,6 +376,11 @@ else
 	Plug 'w0rp/ale'
 endif
 
+" Completion
+if has('python')
+	Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+endif
+
 " Snippets
 if has('python')
 	Plug 'SirVer/ultisnips'
