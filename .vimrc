@@ -363,12 +363,18 @@ call s:post_plug_config.add_task('s:configure_ctrlsf')
 
 " Build/Linting system
 map <Leader>b :make<CR>
-Plug 'vim-syntastic/syntastic'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 Plug 'ErichDonGubler/ctrlp-compiler'
 map <Leader>B :CtrlPCompiler<CR>
+
+" Linting
+if has('python')
+	Plug 'vim-syntastic/syntastic'
+	let g:syntastic_always_populate_loc_list = 1
+	let g:syntastic_check_on_open = 1
+	let g:syntastic_check_on_wq = 0
+else
+	Plug 'w0rp/ale'
+endif
 
 " Snippets
 let g:snipMate = get(g:, 'snipMate', {})
