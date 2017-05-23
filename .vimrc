@@ -337,6 +337,7 @@ set smartcase
 highlight clear Search
 highlight Search gui=underline cterm=underline
 map <Leader>h :%s/
+vmap <Leader>h :s/
 "   Better buffer search
 Plug 'haya14busa/incsearch.vim'
 let g:incsearch#auto_nohlsearch = 1
