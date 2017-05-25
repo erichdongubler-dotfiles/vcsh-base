@@ -229,7 +229,6 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'kopischke/vim-fetch'
 
 " Text manipulation intelligence
-
 "   Whitespace
 set autoindent
 set backspace=indent,eol,start
