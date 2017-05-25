@@ -1,3 +1,5 @@
+set encoding=utf-8
+set fileencoding=utf-8
 
 call plug#begin('~/.vim/bundle')
 
