@@ -183,7 +183,7 @@ Plug 'xolox/vim-shell' | Plug 'xolox/vim-misc'
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_extensions = ['buffertag', 'line']
+let g:ctrlp_extensions = ['buffertag', 'line', 'rtscript']
 if executable('rg')
 	let g:ctrlp_user_command = 'rg %s --follow --files --color=never'
 	let g:ctrlp_use_caching = 0
@@ -192,6 +192,7 @@ let g:ctrlp_map = '<Leader>p'
 map <Leader>p :CtrlP<CR>
 map <Leader>P :CtrlPBuffer<CR>
 map <Leader>o :CtrlPMRU<CR>
+map <Leader>O :CtrlPRTS<CR>
 map <Leader>r :CtrlPBufTag %<CR>
 map <Leader>R :CtrlPTag<CR>
 map <Leader>/ :CtrlPLine<CR>
