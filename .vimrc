@@ -410,6 +410,18 @@ Plug 'cespare/vim-toml'
 Plug 'jceb/vim-orgmode' | Plug 'tpope/vim-speeddating'
 Plug 'gelguy/cmd2.vim'
 Plug 'pangloss/vim-javascript'
+let g:tagbar_type_javascript = {
+			\ 'ctagstype' : 'JavaScript',
+			\ 'kinds'     : [
+				\ 'o:objects',
+				\ 'c:classes',
+				\ 'f:functions',
+				\ 'a:arrays',
+				\ 'm:methods',
+				\ 'n:constants',
+				\ 's:strings'
+				\ ]
+			\ }
 Plug 'octol/vim-cpp-enhanced-highlight'
 "   Sublime config files
 augroup sublime
