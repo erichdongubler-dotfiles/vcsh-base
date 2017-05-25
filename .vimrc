@@ -376,6 +376,12 @@ endif
 " Snippets
 if has('python')
 	Plug 'SirVer/ultisnips'
+	let g:UltiSnipsExpandTrigger = '<Tab>'
+	let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+	let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+
+	let g:ycm_key_list_select_completion = ['<C-n>']
+	let g:ycm_key_list_previous_completion = ['<C-p>']
 else
 	Plug 'garbas/vim-snipmate' | Plug 'tomtom/tlib_vim' | Plug 'MarcWeber/vim-addon-mw-utils'
 	let g:snipMate = get(g:, 'snipMate', {})
