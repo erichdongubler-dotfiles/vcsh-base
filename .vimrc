@@ -146,7 +146,7 @@ function! s:goyo_enter()
   set noshowmode
   set noshowcmd
   set scrolloff=999
-  call EnableWrap()
+  call EnableWordWrap()
   Limelight
 endfunction
 
@@ -157,7 +157,7 @@ function! s:goyo_leave()
   set showcmd
   set scrolloff=5
   Limelight!
-  call DisableWrap()
+  call DisableWordWrap()
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
@@ -250,32 +250,19 @@ set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·,
 nnoremap <Leader>l :set list!<CR>
 "     Wrapping behavior
 set breakindentopt=shift:2
-set nobreakindent
-set nolinebreak
-set nowrap
-let s:wrapToggled = 0
-fun! EnableWrap()
-	echo 'Enabled word wrap'
-	set wrap
-	set linebreak
-	set breakindent
-	let s:wrapToggled = 1
+Plug 'ErichDonGubler/vim-option-bundle'
+fun! DisableWordWrap()
+	call g:word_wrap_bundle.SetLocalTo(0)
 endfun
-fun! DisableWrap()
-	echo 'Disabled word wrap'
-	set nowrap
-	set nolinebreak
-	set nobreakindent
-	let s:wrapToggled = 0
+fun! EnableWordWrap()
+	call g:word_wrap_bundle.SetLocalTo(1)
 endfun
-fun! ToggleWordWrap()
-	if s:wrapToggled
-		call DisableWrap()
-	else
-		call EnableWrap()
-	endif
+fun! BindWordWrapOptions()
+	let g:word_wrap_bundle = option_bundle#create('word wrap', 0, ['wrap', 'linebreak', 'breakindent'])
+	nnoremap <Leader>w :call g:word_wrap_bundle.ToggleLocal()<CR>
+	nnoremap <Leader>W :call g:word_wrap_bundle.ToggleGlobal()<CR>
 endfun
-nnoremap <Leader>w :call ToggleWordWrap()<CR>
+call plug#add_end_task(function('BindWordWrapOptions'))
 "     Trim trailing whitespace on save
 function! <SID>StripTrailingWhitespaces()
 	let l = line(".")
@@ -407,6 +394,7 @@ let g:syntastic_rust_checkers = ['rustc']
 Plug 'OrangeT/vim-csharp'
 Plug 'cespare/vim-toml'
 Plug 'jceb/vim-orgmode' | Plug 'tpope/vim-speeddating'
+autocmd FileType text call DisableWordWrap()
 Plug 'gelguy/cmd2.vim'
 Plug 'pangloss/vim-javascript'
 let g:tagbar_type_javascript = {
