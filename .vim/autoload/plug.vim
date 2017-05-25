@@ -281,6 +281,7 @@ function! plug#end()
   else
     call s:reload_plugins()
   endif
+  call s:post_plug_config.run()
 endfunction
 
 function! s:loaded_names()
@@ -2449,6 +2450,24 @@ if exists('g:plugs')
   call s:upgrade_specs()
   call s:define_commands()
 endif
+
+fun! s:create_new_post_plug_config()
+	let context = { 'tasks': [] }
+	fun context.run() dict
+		for l:Task in self.tasks
+			call l:Task()
+		endfor
+	endfun
+	fun context.add_task(task) dict
+		call add(self.tasks, a:task)
+	endfun
+	return context
+endfun
+let s:post_plug_config = s:create_new_post_plug_config()
+
+fun! plug#add_end_task(funcref)
+	call s:post_plug_config.add_task(a:funcref)
+endfun
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

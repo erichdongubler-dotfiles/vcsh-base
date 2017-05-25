@@ -1,18 +1,5 @@
-fun! s:create_new_post_plug_config()
-	let context = { 'tasks': [] }
-	fun context.run() dict
-		for task in self.tasks
-			call function(task)()
-		endfor
-	endfun
-	fun context.add_task(task) dict
-		call add(self.tasks, a:task)
-	endfun
-	return context
-endfun
 
 call plug#begin('~/.vim/bundle')
-let s:post_plug_config = s:create_new_post_plug_config()
 
 " Bindings for vanilla vim
 set iskeyword-=.
@@ -104,7 +91,7 @@ Plug 'crusoexia/vim-monokai'
 fun! s:configure_colors()
 	colorscheme monokai
 endfun
-call s:post_plug_config.add_task('s:configure_colors')
+call plug#add_end_task(function('s:configure_colors'))
 "   Status lines
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
@@ -360,7 +347,7 @@ function! s:configure_ctrlsf()
 				\ }
 	nnoremap <Leader>f :CtrlSFToggle<CR>
 endfun
-call s:post_plug_config.add_task('s:configure_ctrlsf')
+call plug#add_end_task(function('s:configure_ctrlsf'))
 
 " Builds
 map <Leader>b :make<CR>
@@ -421,5 +408,4 @@ augroup sublime
 augroup END
 
 call plug#end()
-call s:post_plug_config.run()
 
