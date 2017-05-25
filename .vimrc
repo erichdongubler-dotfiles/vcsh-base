@@ -213,7 +213,6 @@ Plug 'scrooloose/nerdtree'
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 function! s:clearFilesAndOpenNERDTree()
-	echom 'Sup!'
 	:bufdo bdelete
 	:NERDTreeToggle
 endfun
