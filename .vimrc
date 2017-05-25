@@ -89,9 +89,10 @@ if &term =~ '^screen'
 endif
 set t_Co=256
 
-Plug 'crusoexia/vim-monokai'
+Plug 'ErichDonGubler/vim-sublime-monokai'
 fun! s:configure_colors()
 	colorscheme monokai
+	let g:monokai_term_italic = 1
 endfun
 call plug#add_end_task(function('s:configure_colors'))
 "   Status lines
