@@ -235,12 +235,12 @@ set autoindent
 set backspace=indent,eol,start
 set shiftwidth=4
 set tabstop=4
-"     Indentation binds
-nnoremap <S-Tab> <<
-nnoremap <Tab> >>
-inoremap <S-Tab> <C-d>
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+"     Indentation
+" nnoremap <S-Tab> <<
+" nnoremap <Tab> >>
+" inoremap <S-Tab> <C-d>
+" vnoremap <Tab> >gv
+" vnoremap <S-Tab> <gv
 "     Splitjoin functionality
 let g:splitjoin_split_mapping = ''
 nnoremap <Leader>S :SplitjoinSplit<CR>
