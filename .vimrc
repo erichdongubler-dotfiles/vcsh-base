@@ -241,13 +241,33 @@ set tabstop=4
 " inoremap <S-Tab> <C-d>
 " vnoremap <Tab> >gv
 " vnoremap <S-Tab> <gv
+Plug 'yggdroot/indentline'
+let g:indentLine_setColors = 0
+let g:indentLine_char = '┆'
+let g:indentLine_setConceal = 0
 "     Splitjoin functionality
 let g:splitjoin_split_mapping = ''
 nnoremap <Leader>S :SplitjoinSplit<CR>
 nnoremap <Leader>J :SplitjoinJoin<CR>
 "     Whitespace character viewing
-set listchars=eol:�,tab:>-,trail:~,extends:>,precedes:<,space:�,
-nnoremap <Leader>l :set list!<CR>
+set list
+fun! EnableShowWhitespace(...)
+	set listchars=eol:$,tab:\├\─,trail:~,extends:>,precedes:<,space:·,
+	let s:showWhitespaceToggled = 1
+endfun
+fun! DisableShowWhitespace(...)
+	set listchars=tab:\┆\ ,precedes:<,extends:>
+	let s:showWhitespaceToggled = 0
+endfun
+fun! ToggleShowWhitespace()
+	if s:showWhitespaceToggled
+		call DisableShowWhitespace()
+	else
+		call EnableShowWhitespace()
+	endif
+endfun
+call DisableShowWhitespace()
+nnoremap <Leader>i :call ToggleShowWhitespace()<CR>
 "     Wrapping behavior
 set breakindentopt=shift:2
 Plug 'ErichDonGubler/vim-option-bundle'
