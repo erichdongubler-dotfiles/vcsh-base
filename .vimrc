@@ -360,12 +360,12 @@ map <Leader>B :CtrlPCompiler<CR>
 
 " Linting
 if has('python')
+	Plug 'w0rp/ale'
+else
 	Plug 'vim-syntastic/syntastic'
 	let g:syntastic_always_populate_loc_list = 1
 	let g:syntastic_check_on_open = 1
 	let g:syntastic_check_on_wq = 0
-else
-	Plug 'w0rp/ale'
 endif
 
 " Completion
