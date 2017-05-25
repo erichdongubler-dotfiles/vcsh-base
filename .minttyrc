@@ -6,3 +6,4 @@ CursorType=block
 Font=Consolas
 FontHeight=13
 FontSmoothing=full
+Term=xterm-256color
