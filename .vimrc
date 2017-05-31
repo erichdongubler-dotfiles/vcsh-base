@@ -10,8 +10,11 @@ let maplocalleader = '|'
 let $VIMHOME = $HOME."/.vim"
 nmap <silent> <leader>ve :vsp $VIMHOME<CR>
 nmap <silent> <leader>vs :so $MYVIMRC<CR>
-set directory=$HOME/.vim/.swapfiles//
-set backupdir=$HOME/.vim/.backups//
+fun! s:SetGlobalFileStore(option, name)
+	exec 'set ' . a:option . '=$HOME/.vim/' . a:name. '//'
+endfun
+call s:SetGlobalFileStore('directory', '.swapfiles')
+call s:SetGlobalFileStore('backupdir', '.backups')
 "   Kill the need to use shift for :commands
 nnoremap ; :
 "   Alias Q to do what we really want
