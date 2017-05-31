@@ -171,6 +171,11 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 nnoremap <Leader>g :Goyo<CR>
 
+" Session management
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
+let g:prosession_tmux_title = 1
+
 " Symbols
 set tags=.tags
 augroup tags
