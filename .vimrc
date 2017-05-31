@@ -93,6 +93,8 @@ if &term =~ '^screen'
 	map <Esc>[6;5~ <C-PageDown>
 endif
 set t_Co=256
+" Fix mouse stuff
+set mouse=a
 
 Plug 'ErichDonGubler/vim-sublime-monokai'
 fun! s:configure_colors()
