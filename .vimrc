@@ -101,6 +101,8 @@ endif
 set t_Co=256
 " Fix mouse stuff
 set mouse=a
+noremap <C-ScrollWheelDown> 3zl
+noremap <C-ScrollWheelUp> 3zh
 
 Plug 'ErichDonGubler/vim-sublime-monokai'
 fun! s:configure_colors()
