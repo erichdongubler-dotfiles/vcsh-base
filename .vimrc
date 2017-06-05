@@ -135,6 +135,8 @@ set splitright
 Plug 'vim-scripts/ZoomWin'
 Plug 'simeji/winresizer'
 let g:winresizer_start_key = '<Leader><CR>'
+"   Better buffer closes with panes
+Plug 'qpkorr/vim-bufkill'
 "   Diffs
 set diffopt+=vertical
 "   Notes
