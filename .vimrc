@@ -73,6 +73,10 @@ let g:localvimrc_sandbox = 0
 
 " UI functionalities
 if has("gui_running")
+	set guioptions-=M " Don't source the menu bar script
+	set guioptions-=m " Don't show the menu bar, either. ;)
+	set guioptions-=T " Don't show the toolbar
+
 	if has("gui_gtk2")
 		set guifont=Inconsolata\ 12
 	elseif has("gui_macvim")
@@ -81,6 +85,7 @@ if has("gui_running")
 		set guifont=Consolas:h13:cANSI
 	endif
 endif
+
 "    Fix terminal-specific settings so we get the correct colors and keybinds
 " set term=xterm-256color
 set t_ut=
