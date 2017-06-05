@@ -312,6 +312,10 @@ function! <SID>StripTrailingWhitespaces()
 	call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+"   Alignment
+Plug 'junegunn/vim-easy-align'
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 "   Selection
 nmap <Leader>v <C-v>^o$
 "   Generic textobjs
