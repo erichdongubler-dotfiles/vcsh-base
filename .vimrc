@@ -439,7 +439,9 @@ let g:syntastic_rust_checkers = ['rustc']
 Plug 'OrangeT/vim-csharp'
 Plug 'cespare/vim-toml'
 Plug 'jceb/vim-orgmode' | Plug 'tpope/vim-speeddating'
-autocmd FileType text call DisableWordWrap()
+let g:org_heading_highlight_colors = ['Identifier']
+let g:org_heading_highlight_levels = 10 " Some arbitrary number
+autocmd FileType text,org call EnableWordWrap()
 Plug 'gelguy/cmd2.vim'
 Plug 'pangloss/vim-javascript'
 let g:tagbar_type_javascript = {
