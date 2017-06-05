@@ -289,7 +289,7 @@ endfun
 call DisableShowWhitespace()
 nnoremap <Leader>i :call ToggleShowWhitespace()<CR>
 "     Wrapping behavior
-set breakindentopt=shift:2
+set breakindentopt=shift:2 " Show soft-wrapped text with extra indent of 2 spaces
 Plug 'ErichDonGubler/vim-option-bundle'
 fun! DisableWordWrap()
 	call g:word_wrap_bundle.SetLocalTo(0)
