@@ -30,6 +30,7 @@ nnoremap <Home> ^
 "   Use Ctrl-Enter to go to a new line
 imap <C-CR> <Esc>o
 imap  <Esc>o
+imap  <Esc>O
 "   Use Shift-Delete to delete the current line
 set <S-Del>=[3;2~
 nmap <S-Del> dd
