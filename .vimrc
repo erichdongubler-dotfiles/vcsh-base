@@ -289,6 +289,7 @@ endfun
 call DisableShowWhitespace()
 nnoremap <Leader>i :call ToggleShowWhitespace()<CR>
 "     Wrapping behavior
+set formatoptions-=t " Disable hard breaks at textwidth boundary
 set breakindentopt=shift:2 " Show soft-wrapped text with extra indent of 2 spaces
 Plug 'ErichDonGubler/vim-option-bundle'
 fun! DisableWordWrap()
