@@ -334,7 +334,7 @@ Plug 'whatyouhide/vim-textobj-xmlattr' | Plug 'kana/vim-textobj-user'
 Plug 'thalesmello/vim-textobj-methodcall' | Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-function'
-Plug 'gko/vim-coloresque'
+Plug 'geoffharcourt/vim-coloresque'
 Plug 'Valloric/MatchTagAlways'
 "    Misc
 Plug 'terryma/vim-multiple-cursors'
