@@ -201,6 +201,7 @@ let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 Plug 'majutsushi/tagbar' | Plug 'xolox/vim-easytags'
 nmap <Leader>t :TagbarToggle<CR>
+let g:airline#extensions#tagbar#enabled = 0
 
 " TODO: ???
 Plug 'xolox/vim-shell' | Plug 'xolox/vim-misc'
