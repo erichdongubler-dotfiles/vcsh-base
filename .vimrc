@@ -103,6 +103,7 @@ endif
 set t_Co=256
 " Fix mouse stuff
 set mouse=a
+set ttymouse=xterm2
 noremap <C-ScrollWheelDown> 3zl
 noremap <C-ScrollWheelUp> 3zh
 
