@@ -88,6 +88,8 @@ endif
 
 "    Fix terminal-specific settings so we get the correct colors and keybinds
 " set term=xterm-256color
+set lazyredraw
+set fillchars=vert:\│
 set t_ut=
 if &term =~ '^screen'
 	execute "set <xUp>=\e[1;*A"
