@@ -17,6 +17,7 @@ call s:SetGlobalFileStore('directory', '.swapfiles')
 call s:SetGlobalFileStore('backupdir', '.backups')
 call s:SetGlobalFileStore('undodir', '.undo')
 set undofile
+Plug 'djoshea/vim-autoread'
 "   Kill the need to use shift for :commands
 nnoremap ; :
 "   Alias Q to do what we really want
