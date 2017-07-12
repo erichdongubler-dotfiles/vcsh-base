@@ -5,6 +5,17 @@
 --exclude=bin
 --exclude=dist
 
+--langdef=css
+--langmap=css:.css
+--regex-css=/^[ \t]*\.([A-Za-z0-9_-]+)/.\1/c,class,classes/
+--regex-css=/^[ \t]*#([A-Za-z0-9_-]+)/#\1/i,id,ids/
+--regex-css=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+)\{/\1/t,tag,tags/
+--regex-css=/^[ \t]*@media\s+([A-Za-z0-9_-]+)/\1/m,media,medias/
+
+--langdef=sass
+--langmap=sass:.sass
+--regex-sass=/^[ \t]*\.([A-Za-z0-9_-]+)/.\1/c,class,classes/
+
 --langdef=markdown
 --langmap=markdown:.mkd
 --langmap=markdown:.markdown
