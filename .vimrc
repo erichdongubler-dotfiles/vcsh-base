@@ -77,6 +77,7 @@ if has("gui_running")
 	set guioptions-=M " Don't source the menu bar script
 	set guioptions-=m " Don't show the menu bar, either. ;)
 	set guioptions-=T " Don't show the toolbar
+	set guioptions-=e " Don't show GUI tabs
 
 	if has("gui_gtk2")
 		set guifont=Inconsolata\ 12
