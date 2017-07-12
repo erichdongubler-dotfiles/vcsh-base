@@ -117,7 +117,6 @@ endfun
 call plug#add_end_task(function('s:configure_colors'))
 "   Status lines
 Plug 'vim-airline/vim-airline'
-let g:airline#extensions#tabline#enabled = 1
 set laststatus=2 " Make airline always appear
 "   Git integration
 Plug 'tpope/vim-fugitive'
@@ -144,6 +143,18 @@ Plug 'simeji/winresizer'
 let g:winresizer_start_key = '<Leader><CR>'
 "   Better buffer closes with panes
 Plug 'qpkorr/vim-bufkill'
+" Better buffer/tab management
+set sessionoptions+=tabpages,globals " Renember tabs in session
+Plug 'zefei/vim-wintabs'
+" let g:wintabs_display = 'statusline'
+let g:wintabs_switchbuf = 'useopen'
+let g:wintabs_ui_show_vimtab_name = 2
+map <C-PageUp> :WintabsPrevious<CR>
+map <C-PageDown> :WintabsNext<CR>
+" Plug 'erichdongubler/ctrlp-wintabs'
+let g:ctrlp_bufname_mod = ':t'
+let g:ctrlp_bufpath_mod = ':~:.:h'
+
 "   Diffs
 set diffopt+=vertical
 "   Notes
