@@ -137,14 +137,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'scrooloose/nerdtree'
 let g:NERDTreeIndicatorMapCustom = {
 			\ "Modified"  : "M",
-			\ "Staged"    : "S",
-			\ "Untracked" : "U",
+			\ "Staged"    : "+",
+			\ "Untracked" : "_",
 			\ "Renamed"   : "R",
 			\ "Unmerged"  : "=",
-			\ "Deleted"   : "D",
-			\ "Dirty"     : "!",
-			\ "Clean"     : "âï¸",
-			\ 'Ignored'   : 'I',
+			\ "Deleted"   : "X",
+			\ "Dirty"     : "D",
+			\ "Clean"     : ":D",
+			\ "Ignored"   : "I",
 			\ "Unknown"   : "?"
 			\ }
 "   Pane manipulation
