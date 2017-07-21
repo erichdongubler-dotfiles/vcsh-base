@@ -86,6 +86,19 @@ if has("gui_running")
 	elseif has("gui_win32")
 		set guifont=Consolas:h13:cANSI
 	endif
+else
+	let g:default_cursor_escape = "\<Esc>[ q"
+	let g:blinking_ibeam_cursor_escape = "\<Esc>[5 q"
+	let g:blinking_underline_cursor_escape = "\<Esc>[3 q"
+	let g:blinking_block_cursor_escape = "\<Esc>[1 q"
+
+	let g:insert_cursor_escape = g:blinking_ibeam_cursor_escape
+	let g:replace_cursor_escape = g:blinking_underline_cursor_escape
+	let g:normal_cursor_escape = g:blinking_block_cursor_escape
+
+	let &t_SI = g:insert_cursor_escape
+	let &t_SR = g:replace_cursor_escape
+	let &t_EI = g:normal_cursor_escape
 endif
 
 "    Fix terminal-specific settings so we get the correct colors and keybinds
