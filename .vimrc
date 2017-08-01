@@ -382,8 +382,6 @@ nnoremap <S-F5> "=strftime("%F %T")<CR>P
 inoremap <S-F5> <C-R>=strftime("%F %T")<CR>
 
 " Buffer navigation
-map <C-PageUp> :bp<CR>
-map <C-PageDown> :bn<CR>
 Plug 'tpope/vim-unimpaired'
 Plug 'easymotion/vim-easymotion'
 "   Search
