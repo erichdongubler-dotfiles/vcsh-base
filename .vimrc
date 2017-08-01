@@ -495,6 +495,7 @@ Plug 'jceb/vim-orgmode' | Plug 'tpope/vim-speeddating'
 let g:org_heading_highlight_colors = ['Identifier']
 let g:org_heading_highlight_levels = 10 " Some arbitrary number
 autocmd FileType text,org call EnableWordWrap()
+Plug 'rudes/vim-java'
 Plug 'pangloss/vim-javascript'
 let g:tagbar_type_javascript = {
 			\ 'ctagstype' : 'JavaScript',
