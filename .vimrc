@@ -407,6 +407,14 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+Plug 'gelguy/cmd2.vim'
+let g:Cmd2_options = {
+	\ '_complete_ignorecase': 1,
+	\ '_complete_uniq_ignorecase': 0,
+	\ '_complete_fuzzy': 1,
+	\ }
+nmap / /<F12>
+cmap <F12> <Plug>(Cmd2Suggest)
 "   Multi-file search
 Plug 'dyng/ctrlsf.vim'
 function! s:configure_ctrlsf()
@@ -487,14 +495,6 @@ Plug 'jceb/vim-orgmode' | Plug 'tpope/vim-speeddating'
 let g:org_heading_highlight_colors = ['Identifier']
 let g:org_heading_highlight_levels = 10 " Some arbitrary number
 autocmd FileType text,org call EnableWordWrap()
-Plug 'gelguy/cmd2.vim'
-let g:Cmd2_options = {
-	\ '_complete_ignorecase': 1,
-	\ '_complete_uniq_ignorecase': 0,
-	\ '_complete_fuzzy': 1,
-	\ }
-nmap / /<F12>
-cmap <F12> <Plug>(Cmd2Suggest)
 Plug 'pangloss/vim-javascript'
 let g:tagbar_type_javascript = {
 			\ 'ctagstype' : 'JavaScript',
