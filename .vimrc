@@ -172,7 +172,9 @@ let g:ctrlp_bufpath_mod = ':~:.:h'
 set diffopt+=vertical
 "   Notes
 Plug 'mtth/scratch.vim'
-"   tmux integration
+let g:scratch_autohide = 0
+let g:scratch_insert_autohide = 0
+"  tmux integration
 Plug 'benmills/vimux'
 let g:VimuxOrientation = "h"
 "   Close quickfix window with q
