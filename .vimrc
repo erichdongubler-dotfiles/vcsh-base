@@ -231,9 +231,6 @@ Plug 'majutsushi/tagbar' | Plug 'xolox/vim-easytags'
 nmap <Leader>t :TagbarToggle<CR>
 let g:airline#extensions#tagbar#enabled = 0
 
-" TODO: ???
-Plug 'xolox/vim-shell' | Plug 'xolox/vim-misc'
-
 " Fuzzy matching facilities
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_by_filename = 1
