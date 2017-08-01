@@ -63,7 +63,7 @@ nmap <Leader>! :call PromptSilentCommand()<CR>
 nmap <Leader>1 :call PromptSilentCommand()<CR>
 
 " VimPlug
-let g:plug_window = 'enew'
+let g:plug_window = 'vnew'
 "   Helptags command: Normally Pathogen would do this, but we like VimPlug. :)
 :command! Helptags call plug#helptags()
 
