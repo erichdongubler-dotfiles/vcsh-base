@@ -430,13 +430,13 @@ function! s:configure_ctrlsf()
 				\ }
 	let g:ctrlsf_case_sensitive = 'smart'
 	nnoremap <Leader>f :CtrlSFToggle<CR>
-	vnoremap <Leader>F <Plug>CtrlSFVwordPath
-
 	if executable('rg')
 		let g:ctrlsf_ackprg = 'rg'
 		let g:ctrlsf_extra_backend_args = {
 			\ 'rg': '--follow'
 			\ }
+	" else
+	" 	let g:ctrlsf_ackprg = 'grep'
 	endif
 endfun
 call plug#add_end_task(function('s:configure_ctrlsf'))
