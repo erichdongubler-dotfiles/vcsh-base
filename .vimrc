@@ -478,7 +478,7 @@ endif
 Plug 'honza/vim-snippets'
 
 " Expanded language support
-Plug 'jtratner/vim-flavored-markdown'
+Plug 'plasticboy/vim-markdown'
 augroup markdown
 	au!
 	au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
