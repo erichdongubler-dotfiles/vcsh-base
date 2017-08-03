@@ -276,7 +276,7 @@ Plug 'ErichDonGubler/nerdtree-plugin-open-in-file-browser' | Plug 'scrooloose/ne
 Plug 'ErichDonGubler/nerdtree-ctrlp-root' | Plug 'ctrlpvim/ctrlp.vim' | Plug 'scrooloose/nerdtree'
 "   Path/creation
 Plug 'EinfachToll/DidYouMean'
-Plug 'danro/rename.vim'
+Plug 'tpope/vim-eunuch'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'kopischke/vim-fetch'
 
