@@ -404,6 +404,10 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+Plug 'haya14busa/incsearch-easymotion.vim' | Plug 'easymotion/vim-easymotion' | Plug 'haya14busa/incsearch.vim'
+map <Leader><Leader>/ <Plug>(incsearch-easymotion-/)
+map <Leader><Leader>? <Plug>(incsearch-easymotion-?)
+map <Leader><Leader>g/ <Plug>(incsearch-easymotion-stay)
 Plug 'gelguy/cmd2.vim'
 let g:Cmd2_options = {
 	\ '_complete_ignorecase': 1,
