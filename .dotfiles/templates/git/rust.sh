@@ -14,4 +14,3 @@ while [[ -z $is_binary ]]; do
 	esac
 done
 
-echo 'Cargo.lock' >> .gitignore

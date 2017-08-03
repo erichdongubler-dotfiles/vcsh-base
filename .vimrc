@@ -513,8 +513,11 @@ let g:tagbar_type_javascript = {
 				\ 's:strings'
 				\ ]
 			\ }
-Plug 'leafgarland/typescript-vim'
-Plug 'mxw/vim-jsx'
+if executable('npm')
+	Plug 'mxw/vim-jsx'
+	Plug 'leafgarland/typescript-vim'
+	Plug 'posva/vim-vue', { 'do': 'npm i -g eslint eslint-plugin-vue' }
+endif
 Plug 'octol/vim-cpp-enhanced-highlight'
 "   Sublime config files
 augroup sublime

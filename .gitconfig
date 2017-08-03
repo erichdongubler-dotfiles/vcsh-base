@@ -44,3 +44,5 @@
 	pager = less -x1,5
 [color]
 	ui = true
+[credential]
+	helper = store
