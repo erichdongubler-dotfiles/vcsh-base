@@ -369,8 +369,7 @@ Plug 'unblevable/quick-scope'
 "    Misc
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Raimondi/delimitMate'
-let g:delimitMate_expand_cr = 1
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
