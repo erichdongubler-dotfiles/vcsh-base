@@ -366,6 +366,7 @@ Plug 'glts/vim-textobj-comment'
 Plug 'geoffharcourt/vim-coloresque'
 Plug 'Valloric/MatchTagAlways'
 Plug 'unblevable/quick-scope'
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 "    Misc
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
