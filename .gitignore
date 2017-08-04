@@ -2,6 +2,7 @@
 .dotfiles.git
 .tags
 tags
-.vim/
+.vim/bundle
+.vim/.*
 .cache
 .viminfo
