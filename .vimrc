@@ -362,8 +362,10 @@ Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'glts/vim-textobj-comment'
+"   Nice highlighting plugins
 Plug 'geoffharcourt/vim-coloresque'
 Plug 'Valloric/MatchTagAlways'
+Plug 'unblevable/quick-scope'
 "    Misc
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
