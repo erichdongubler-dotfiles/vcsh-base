@@ -371,6 +371,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
