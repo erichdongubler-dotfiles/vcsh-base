@@ -4,7 +4,10 @@ function install_package_from_aur() {
 	cd "$1"
 	makepkg -sri
 	cd ..
+	rm -rf "$1"
 }
 install_package_from_aur package-query
 install_package_from_aur yaourt
+
+yaourt -S package-query yaourt --noconfirm
 
