@@ -1,0 +1,7 @@
+xterm.termName: xterm-256color
+xterm*background: black
+xterm*foreground: white
+xterm*faceName: Inconsolata:size=10:antialias=true
+xterm*font: 8x13
+xterm*cursorBlink: true
+xterm.vt100.metaSendsEscape: true
