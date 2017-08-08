@@ -252,11 +252,9 @@ Plug 'ivalkeen/vim-ctrlp-tjump' | Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_tjump_only_silent = 1
 nnoremap <c-]> :CtrlPtjump<CR>
 vnoremap <c-]> :CtrlPtjumpVisual<CR>
-Plug 'FelikZ/ctrlp-py-matcher' | Plug 'ctrlpvim/ctrlp.vim'
 if has('python')
+	Plug 'FelikZ/ctrlp-py-matcher' | Plug 'ctrlpvim/ctrlp.vim'
 	let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-else
-	echom 'python not found, using slower fuzzy finder'
 endif
 
 " Files
