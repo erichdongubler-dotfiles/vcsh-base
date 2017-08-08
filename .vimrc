@@ -472,6 +472,7 @@ endif
 Plug 'honza/vim-snippets'
 
 " Expanded language support
+Plug 'gisphm/vim-gitignore'
 Plug 'plasticboy/vim-markdown'
 augroup markdown
 	au!
