@@ -174,6 +174,7 @@ set diffopt+=vertical
 Plug 'mtth/scratch.vim'
 let g:scratch_autohide = 0
 let g:scratch_insert_autohide = 0
+let g:scratch_persistence_file = '.scratch.vim'
 "  tmux integration
 Plug 'benmills/vimux'
 let g:VimuxOrientation = "h"
