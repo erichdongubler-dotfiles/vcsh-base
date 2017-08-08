@@ -344,17 +344,17 @@ nmap ga <Plug>(EasyAlign)
 nmap <Leader>v <C-v>^o$
 "   Generic textobjs
 Plug 'wellle/targets.vim'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-function'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-line'
+Plug 'glts/vim-textobj-comment'
 "   Arguments
 Plug 'peterrincker/vim-argumentative'
 "   HTML/XML textobjs
 Plug 'mattn/emmet-vim'
 Plug 'whatyouhide/vim-textobj-xmlattr' | Plug 'kana/vim-textobj-user'
 Plug 'thalesmello/vim-textobj-methodcall' | Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-function'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-line'
-Plug 'glts/vim-textobj-comment'
 "   Nice highlighting plugins
 Plug 'geoffharcourt/vim-coloresque'
 Plug 'Valloric/MatchTagAlways'
