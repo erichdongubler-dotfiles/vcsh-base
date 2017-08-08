@@ -412,7 +412,7 @@ let g:Cmd2_options = {
 	\ '_complete_uniq_ignorecase': 0,
 	\ '_complete_fuzzy': 1,
 	\ }
-nmap / /<F12>
+map / /<F12>
 cmap <F12> <Plug>(Cmd2Suggest)
 "   Multi-file search
 Plug 'dyng/ctrlsf.vim'
