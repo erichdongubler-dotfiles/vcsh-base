@@ -167,6 +167,32 @@ map <C-PageDown> :WintabsNext<CR>
 " Plug 'erichdongubler/ctrlp-wintabs'
 let g:ctrlp_bufname_mod = ':t'
 let g:ctrlp_bufpath_mod = ':~:.:h'
+fu! g:BufParts(bufnr)
+	let idc  = (a:bufnr == bufnr('#')      ? '#' : '')  " alternative
+	let idc .= (getbufvar(a:bufnr, '&mod') ? '+' : '')  " modified
+	let idc .= (getbufvar(a:bufnr, '&ma')  ? '' : '-')  " nomodifiable
+	let idc .= (getbufvar(a:bufnr, '&ro')  ? '=' : '')  " readonly
+
+	" flags for highlighting
+	let hiflags  = (bufwinnr(a:bufnr) != -1    ? '*' : '')  " visible
+	let hiflags .= (getbufvar(a:bufnr, '&mod') ? '+' : '')  " modified
+	let hiflags .= (a:bufnr == bufnr('%')      ? '!' : '')  " current
+
+	let bname = bufname(a:bufnr)
+	let bname = (bname == '' ? '[No Name]' : fnamemodify(bname, g:ctrlp_bufname_mod))
+
+	let bpath = empty(g:ctrlp_bufpath_mod) ? '' : fnamemodify(bufname(a:bufnr), g:ctrlp_bufpath_mod).s:lash()
+
+	retu [idc, hiflags, bname, bpath]
+endf
+fun! g:PrintWintabBuffers()
+	let l:message = ''
+	for buffer in wintabs#getwinvar(winnr(), 'wintabs_buflist', [])
+		let l:buf_parts = g:BufParts(buffer)
+		let l:message = l:message . string(l:buf_parts) . '\r'
+	endfor
+	echom l:message
+endfun
 
 "   Diffs
 set diffopt+=vertical
