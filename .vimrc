@@ -515,6 +515,10 @@ if executable('npm')
 endif
 Plug 'leafgarland/typescript-vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'chrisbra/csv.vim'
+augroup filetypedetect
+	au! BufRead,BufNewFile *.csv,*.dat setfiletype csv
+augroup END
 "   Sublime config files
 augroup sublime
 	au!
