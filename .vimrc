@@ -355,6 +355,8 @@ Plug 'kana/vim-textobj-line'
 Plug 'glts/vim-textobj-comment'
 "   Arguments
 Plug 'peterrincker/vim-argumentative'
+"   Prose
+Plug 'reedes/vim-textobj-quote'
 "   HTML/XML textobjs
 Plug 'mattn/emmet-vim'
 Plug 'whatyouhide/vim-textobj-xmlattr' | Plug 'kana/vim-textobj-user'
