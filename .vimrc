@@ -453,7 +453,7 @@ endif
 
 " Completion
 if has('python')
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+	Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
 	let g:ycm_key_list_select_completion = ['<C-n>']
 	let g:ycm_key_list_previous_completion = ['<C-p>']
 endif
