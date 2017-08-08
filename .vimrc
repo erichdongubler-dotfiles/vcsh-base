@@ -381,6 +381,18 @@ inoremap <S-F5> <C-R>=strftime("%F %T")<CR>
 " Buffer navigation
 Plug 'tpope/vim-unimpaired'
 Plug 'easymotion/vim-easymotion'
+Plug 'bkad/CamelCaseMotion'
+fun! s:SetUpCamelCaseMotionBinds()
+	call camelcasemotion#CreateMotionMappings('')
+	map <silent> g <Plug>CamelCaseMotion_ge
+	omap <silent> i<Leader>w <Plug>CamelCaseMotion_iw
+	xmap <silent> i<Leader>w <Plug>CamelCaseMotion_iw
+	omap <silent> i<Leader>b <Plug>CamelCaseMotion_ib
+	xmap <silent> i<Leader>b <Plug>CamelCaseMotion_ib
+	omap <silent> i<Leader>e <Plug>CamelCaseMotion_ie
+	xmap <silent> i<Leader>e <Plug>CamelCaseMotion_ie
+endfun
+call plug#add_end_task(function('s:SetUpCamelCaseMotionBinds'))
 "   Search
 set hlsearch
 set ignorecase
