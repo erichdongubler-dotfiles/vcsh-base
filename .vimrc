@@ -353,6 +353,7 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
+Plug 'mattn/vim-textobj-url'
 "   Arguments
 Plug 'peterrincker/vim-argumentative'
 "   Prose
