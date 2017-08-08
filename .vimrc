@@ -348,11 +348,11 @@ nmap ga <Plug>(EasyAlign)
 nmap <Leader>v <C-v>^o$
 "   Generic textobjs
 Plug 'wellle/targets.vim'
+Plug 'glts/vim-textobj-comment'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
-Plug 'glts/vim-textobj-comment'
 "   Arguments
 Plug 'peterrincker/vim-argumentative'
 "   Prose
