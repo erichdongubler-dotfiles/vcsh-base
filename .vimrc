@@ -285,12 +285,7 @@ set backspace=indent,eol,start
 set shiftwidth=4
 set tabstop=4
 "     Indentation
-" nnoremap <S-Tab> <<
-" nnoremap <Tab> >>
-" inoremap <S-Tab> <C-d>
-" vnoremap <Tab> >gv
-" vnoremap <S-Tab> <gv
-Plug 'yggdroot/indentline'
+Plug 'Yggdroot/indentline'
 let g:indentLine_setColors = 0
 let g:indentLine_char = '┆'
 let g:indentLine_setConceal = 0
