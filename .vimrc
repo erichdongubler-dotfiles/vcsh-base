@@ -454,6 +454,8 @@ endif
 " Completion
 if has('python')
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+	let g:ycm_key_list_select_completion = ['<C-n>']
+	let g:ycm_key_list_previous_completion = ['<C-p>']
 endif
 
 " Snippets
@@ -462,9 +464,6 @@ if has('python')
 	let g:UltiSnipsExpandTrigger = '<Tab>'
 	let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 	let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-
-	let g:ycm_key_list_select_completion = ['<C-n>']
-	let g:ycm_key_list_previous_completion = ['<C-p>']
 else
 	Plug 'garbas/vim-snipmate' | Plug 'tomtom/tlib_vim' | Plug 'MarcWeber/vim-addon-mw-utils'
 	let g:snipMate = get(g:, 'snipMate', {})
