@@ -286,7 +286,9 @@ set autoindent
 set backspace=indent,eol,start
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 "     Indentation
+Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentline'
 let g:indentLine_setColors = 0
 let g:indentLine_char = '┆'
