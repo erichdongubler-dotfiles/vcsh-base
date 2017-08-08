@@ -357,7 +357,9 @@ Plug 'whatyouhide/vim-textobj-xmlattr' | Plug 'kana/vim-textobj-user'
 Plug 'thalesmello/vim-textobj-methodcall' | Plug 'kana/vim-textobj-user'
 "   Nice highlighting plugins
 Plug 'geoffharcourt/vim-coloresque'
-Plug 'Valloric/MatchTagAlways'
+if has('python')
+	Plug 'Valloric/MatchTagAlways'
+endif
 Plug 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 "    Misc
