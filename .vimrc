@@ -515,6 +515,7 @@ if executable('npm')
 endif
 Plug 'leafgarland/typescript-vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'python-mode/python-mode'
 "   Sublime config files
 augroup sublime
 	au!
