@@ -131,9 +131,9 @@ call plug#add_end_task(function('s:configure_colors'))
 "   Status lines
 set laststatus=2 " Make the status line always appear
 if has('python')
-	Plug 'vim-airline/vim-airline'
-else
 	Plug 'powerline/powerline'
+else
+	Plug 'vim-airline/vim-airline'
 endif
 "   Git integration
 Plug 'tpope/vim-fugitive'
