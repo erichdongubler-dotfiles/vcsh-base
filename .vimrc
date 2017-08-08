@@ -435,6 +435,8 @@ function! s:configure_ctrlsf()
 	endif
 endfun
 call plug#add_end_task(function('s:configure_ctrlsf'))
+"   Undo visualization
+Plug 'mbbill/undotree'
 
 " Builds
 map <Leader>b :make<CR>
