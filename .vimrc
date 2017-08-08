@@ -223,13 +223,15 @@ augroup tags
 	au!
 	au BufNewFile,BufRead .tags setlocal filetype=tags
 augroup END
-Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
-Plug 'majutsushi/tagbar' | Plug 'xolox/vim-easytags'
-nmap <Leader>t :TagbarToggle<CR>
-let g:airline#extensions#tagbar#enabled = 0
+if executable('ctags')
+	Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
+	let g:easytags_async = 1
+	let g:easytags_dynamic_files = 2
+	let g:easytags_resolve_links = 1
+	Plug 'majutsushi/tagbar' | Plug 'xolox/vim-easytags'
+	nmap <Leader>t :TagbarToggle<CR>
+	let g:airline#extensions#tagbar#enabled = 0
+endif
 
 " Fuzzy matching facilities
 Plug 'ctrlpvim/ctrlp.vim'
