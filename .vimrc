@@ -129,8 +129,12 @@ fun! s:configure_colors()
 endfun
 call plug#add_end_task(function('s:configure_colors'))
 "   Status lines
-Plug 'vim-airline/vim-airline'
-set laststatus=2 " Make airline always appear
+set laststatus=2 " Make the status line always appear
+if has('python')
+	Plug 'vim-airline/vim-airline'
+else
+	Plug 'powerline/powerline'
+endif
 "   Git integration
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
