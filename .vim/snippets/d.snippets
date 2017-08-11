@@ -1,0 +1,72 @@
+snippet csvreadercall "std.csv.csvReader call code"
+	import std.csv : csvReader;
+	import std.file : readText, FileException;
+	string content;
+	try {
+		content = ${1:"test.csv"}.readText;
+		auto reader = csvReader!(string[string])(content, null);
+		foreach(record; reader) {
+			writeln("record: ", record);
+		}
+	}
+	catch(FileException e) {
+		stderr.writeln(e.msg);
+		return 1;
+	}
+
+snippet getoptcall "std.getopt call code"
+	import std.getopt;
+	try {
+		auto result = getopt(args
+					, "${1:a}|${2:arg}", "${3:This is some help!}", &${4:variable}
+					);
+		if(result.helpWanted) {
+			defaultGetoptPrinter("${5:Usage:}", result.options);
+		}
+	}
+	catch(GetOptException e) {
+		${6:stderr.writeln(e.msg);}
+		return 1;
+	}
+
+snippet helloworld
+	import std.stdio;
+
+	int main(string[] args) {
+		writeln("Hello, world!");
+		return 0;
+	}
+
+snippet ipts "import std.<...> : <...>"
+	import std.${1:stdio} : ${2:writeln};
+snippet ipt "import std.<...>;"
+	import std.${1:stdio};
+
+snippet rdmd
+	#! /bin/rdmd
+
+snippet inswtln "insert stdout print"
+	import std.stdio : writeln;
+	writeln("${1:Hello, world!}");
+snippet iptwtlnvar "insert stdout var print with import"
+	import std.stdio : writeln;
+	writeln("${2:$1}: ", ${1:var});
+snippet wtlnvar
+	writeln("${2:$1}: ", ${1:var});
+snippet wtln
+	writeln("${1:Hello, world!}"$2);
+snippet wt
+	write("${1:Hello, world!}"$2);
+
+snippet ewt
+	stderr.write("${1:Hello, world!}"$2);
+snippet ewtln
+	stderr.writeln("${1:Hello, world!}"$2);
+snippet ewtlnvar
+	stderr.writeln("${2:$1}: ", ${1:var});
+snippet iptewtln "insert stderr print with import"
+	import std.stdio : stderr;
+	stderr.writeln("${1:Hello, world!}");
+snippet iptewtlnvar "insert stderr var print with import"
+	import std.stdio : stderr;
+	stderr.writeln("${2:$1}: ", ${1:var});

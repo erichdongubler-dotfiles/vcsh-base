@@ -1,0 +1,36 @@
+snippet clog "console.log(...);"
+	console.log('${1:Hello, world!}');
+snippet clogvar "console.log(...);"
+	console.log('${2:$1}:', ${1:var});
+snippet cerr "console.err(...);"
+	console.err('${1:Hello, world!}');
+snippet cerrvar "console.err(...);"
+	console.err('${2:$1}:', ${1:var});
+snippet cwarn "console.warn(...);"
+	console.warn('${1:Hello, world!}');
+snippet cwarnvar "console.warn(...);"
+	console.err('${2:$1}:', ${1:var});
+snippet ctrace "console.trace()"
+	console.trace();
+snippet mem "object field"
+	${1:member}: ${2:$1},
+snippet pstr "pretty stringify"
+	JSON.stringify(${1:variable}, null, ${2:2})
+snippet super "call proto method"
+	${1:className}.prototype.${2:functionName}.call(${4:this}, ${3:args});
+snippet define "define RequireJS module"
+	define('${1:moduleName}', [${2:'dependencyName'}], function ($3) {
+		'use strict';
+
+		var ${4:$1} = function () {$5};
+
+		return $1;
+	});
+snippet wlog "log w/o \n (Node)"
+	process.stdout.write('${1:Hello, world!}'${2:});
+snippet wlogvar "log var w/o \n (Node)"
+	process.stdout.write('${2:$1}: ', ${1:variable});
+snippet var "new local var"
+	var ${1:variable} = ${2:null};
+snippet thisa "this assignment"
+	this.${1:mem} = ${2:$1};
