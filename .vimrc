@@ -157,9 +157,9 @@ let g:winresizer_start_key = '<Leader><CR>'
 "   Better buffer closes with panes
 Plug 'qpkorr/vim-bufkill'
 " Better buffer/tab management
-set sessionoptions+=tabpages,globals " Renember tabs in session
+set sessionoptions+=tabpages " Remember tabs in session
+set sessionoptions+=globals
 Plug 'zefei/vim-wintabs'
-" let g:wintabs_display = 'statusline'
 let g:wintabs_switchbuf = 'useopen'
 let g:wintabs_ui_show_vimtab_name = 2
 map <C-PageUp> :WintabsPrevious<CR>
