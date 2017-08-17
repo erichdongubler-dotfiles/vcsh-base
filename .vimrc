@@ -164,6 +164,8 @@ let g:wintabs_switchbuf = 'useopen'
 let g:wintabs_ui_show_vimtab_name = 2
 map <C-PageUp> :WintabsPrevious<CR>
 map <C-PageDown> :WintabsNext<CR>
+map <Leader>w :WintabsClose<CR>
+map <Leader>W :WintabsOnly<CR>:WintabsClose<CR>
 " Plug 'erichdongubler/ctrlp-wintabs'
 let g:ctrlp_bufname_mod = ':t'
 let g:ctrlp_bufpath_mod = ':~:.:h'
@@ -328,8 +330,8 @@ fun! EnableWordWrap()
 endfun
 fun! BindWordWrapOptions()
 	let g:word_wrap_bundle = option_bundle#create('word wrap', 0, ['wrap', 'linebreak', 'breakindent'])
-	nnoremap <Leader>w :call g:word_wrap_bundle.ToggleLocal()<CR>
-	nnoremap <Leader>W :call g:word_wrap_bundle.ToggleGlobal()<CR>
+	nnoremap <Leader><Tab> :call g:word_wrap_bundle.ToggleLocal()<CR>
+	nnoremap <Leader><S-Tab> :call g:word_wrap_bundle.ToggleGlobal()<CR>
 endfun
 call plug#add_end_task(function('BindWordWrapOptions'))
 "     Trim trailing whitespace on save
