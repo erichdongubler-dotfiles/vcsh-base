@@ -120,7 +120,9 @@ endif
 set t_Co=256
 " Fix mouse stuff
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+	set ttymouse=xterm2
+endif
 noremap <C-ScrollWheelDown> 3zl
 noremap <C-ScrollWheelUp> 3zh
 
@@ -219,7 +221,9 @@ nnoremap <Leader>g :Goyo<CR>
 " Session management
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
-let g:prosession_tmux_title = 1
+if !has('nvim')
+	let g:prosession_tmux_title = 1
+endif
 
 " Symbols
 set tags=.tags
