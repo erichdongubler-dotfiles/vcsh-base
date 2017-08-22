@@ -124,6 +124,8 @@ if !has('nvim')
 endif
 noremap <C-ScrollWheelDown> 3zl
 noremap <C-ScrollWheelUp> 3zh
+" Other view configuration
+set scrolloff=5
 
 Plug 'ErichDonGubler/vim-sublime-monokai'
 fun! s:configure_colors()
