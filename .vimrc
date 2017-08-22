@@ -128,11 +128,12 @@ noremap <C-ScrollWheelUp> 3zh
 set scrolloff=5
 
 Plug 'ErichDonGubler/vim-sublime-monokai'
-fun! s:configure_colors()
+let g:monokai_term_italic = 1
+fun! s:ConfigureColors()
 	colorscheme monokai
-	let g:monokai_term_italic = 1
 endfun
-call plug#add_end_task(function('s:configure_colors'))
+call plug#add_end_task(function('s:ConfigureColors'))
+
 "   Status lines
 Plug 'vim-airline/vim-airline'
 set laststatus=2 " Make airline always appear
