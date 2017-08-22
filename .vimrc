@@ -22,6 +22,7 @@ Plug 'djoshea/vim-autoread'
 command! Q :q
 command! Qa :qa
 command! QA :qa
+map <Leader>q :q<CR>
 "   Overwrite files that need sudo
 cmap w!! w !sudo tee % >/dev/null
 "   Make Home go to the beginning of the indented line, not the line itself
