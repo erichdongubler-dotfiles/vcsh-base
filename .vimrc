@@ -279,11 +279,7 @@ endif
 Plug 'scrooloose/nerdtree'
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
-function! s:clearFilesAndOpenNERDTree()
-	:bufdo bdelete
-	:NERDTreeToggle
-endfun
-map <Leader>K call <SID>clearFilesAndOpenNERDTree()
+map <Leader>K :NERDTreeFind<CR>
 Plug 'jistr/vim-nerdtree-tabs' | Plug 'scrooloose/nerdtree'
 let g:nerdtree_tabs_open_on_gui_startup = 2
 map <Leader>k :NERDTreeTabsToggle<CR>
