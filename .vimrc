@@ -50,7 +50,7 @@ fun! SilentCommand(command)
 	exec 'silent !' . a:command
 	redraw!
 endfun
-function! PromptSilentCommand()
+fun! PromptSilentCommand()
 	let l:command = input('Type command:')
 	if strln(l:command)
 		call SilentCommand(l:command)
@@ -344,7 +344,7 @@ fun! BindWordWrapOptions()
 endfun
 call plug#add_end_task(function('BindWordWrapOptions'))
 "     Trim trailing whitespace on save
-function! <SID>StripTrailingWhitespaces()
+fun! <SID>StripTrailingWhitespaces()
 	let l = line(".")
 	let c = col(".")
 	%s/\s\+$//e
@@ -538,7 +538,7 @@ augroup END
 
 call plug#end()
 
-function! SyntaxItem()
+fun! s:SyntaxItem()
 	return synIDattr(synID(line("."), col("."), 1), "name")
-endfunction
-
+endfun
+command! -nargs=0 EchoHighlightingGroup echo s:SyntaxItem()
