@@ -163,8 +163,6 @@ let g:winresizer_start_key = '<Leader><CR>'
 "   Better buffer closes with panes
 Plug 'qpkorr/vim-bufkill'
 " Better buffer/tab management
-set sessionoptions+=tabpages " Remember tabs in session
-set sessionoptions+=globals
 Plug 'zefei/vim-wintabs'
 let g:wintabs_switchbuf = 'useopen'
 let g:wintabs_ui_show_vimtab_name = 2
@@ -221,6 +219,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 nnoremap <Leader>g :Goyo<CR>
 
 " Session management
+set sessionoptions-=options " Don't remember options set before
+set sessionoptions+=tabpages " Remember tabs in session
+set sessionoptions+=globals
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 if !has('nvim')
