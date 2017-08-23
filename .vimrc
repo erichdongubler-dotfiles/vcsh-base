@@ -18,6 +18,9 @@ call s:SetGlobalFileStore('backupdir', '.backups')
 call s:SetGlobalFileStore('undodir', '.undo')
 set undofile
 Plug 'djoshea/vim-autoread'
+if executable('tmux')
+	Plug 'tmux-plugins/vim-tmux-focus-events'
+endif
 "   Alias Q to do what we really want
 command! Q :q
 command! Qa :qa
