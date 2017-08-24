@@ -119,7 +119,6 @@ if &term =~ '^screen'
 	map <Esc>[5;5~ <C-PageUp>
 	map <Esc>[6;5~ <C-PageDown>
 endif
-set t_Co=256
 " Fix mouse stuff
 set mouse=a
 if !has('nvim')
