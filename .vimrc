@@ -386,6 +386,8 @@ if has('python')
 endif
 Plug 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+Plug 'dominikduda/vim_current_word'
+let g:vim_current_word#highlight_only_in_focused_window = 1
 "    Misc
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
