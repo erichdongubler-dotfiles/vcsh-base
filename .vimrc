@@ -367,7 +367,10 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
+"   Special integration for the Internet
 Plug 'mattn/vim-textobj-url'
+Plug 'tyru/open-browser.vim'
+map <Leader>u <Plug>(openbrowser-smart-search)
 "   Arguments
 Plug 'peterrincker/vim-argumentative'
 "   Prose
