@@ -155,6 +155,9 @@ let g:NERDTreeIndicatorMapCustom = {
 			\ "Ignored"   : "I",
 			\ "Unknown"   : "?"
 			\ }
+if has('python')
+	Plug 'jaxbot/github-issues.vim'
+endif
 "   Pane manipulation
 set hidden
 set splitbelow
