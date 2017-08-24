@@ -290,6 +290,7 @@ let g:nerdtree_tabs_open_on_gui_startup = 2
 map <Leader>k :NERDTreeTabsToggle<CR>
 Plug 'ErichDonGubler/nerdtree-plugin-open-in-file-browser' | Plug 'scrooloose/nerdtree'
 Plug 'ErichDonGubler/nerdtree-ctrlp-root' | Plug 'ctrlpvim/ctrlp.vim' | Plug 'scrooloose/nerdtree'
+Plug 'dhruvasagar/vim-vinegar' | Plug 'scrooloose/nerdtree'
 "   Path/creation
 Plug 'EinfachToll/DidYouMean'
 Plug 'tpope/vim-eunuch'
