@@ -543,6 +543,7 @@ augroup sublime
 	au BufNewFile,BufRead *.sublime-project,*.sublime-build,*.sublime-snippet setlocal filetype=json
 augroup END
 
+Plug 'ryanss/vim-hackernews'
 call plug#end()
 
 fun! s:SyntaxItem()
