@@ -6,7 +6,7 @@ case "$DOTFILES_OS" in
 		;;
 	*)
 		function .fzf() {
-			pushd "$DOTFILES_SCRIPT_DIRECTORY" > /dev/null
+			pushd "$DOTFILES_SCRIPTS_DIRECTORY" > /dev/null
 			ls */**.sh | fzf
 			popd > /dev/null
 		}
@@ -15,9 +15,9 @@ case "$DOTFILES_OS" in
 			local script="$(.fzf)"
 			if [ -f "$script" ]; then
 				echo "Sourcing dotfiles script \"$script\""
-				pushd "$DOTFILES_SCRIPT_DIRECTORY" > /dev/null
+				pushd "$DOTFILES_SCRIPTS_DIRECTORY" > /dev/null
 				. "$script"
-				popd "$DOTFILES_SCRIPT_DIRECTORY" > /dev/null
+				popd "$DOTFILES_SCRIPTS_DIRECTORY" > /dev/null
 			else
 				echo "No script selected (output was \"$script\")"
 			fi
@@ -28,10 +28,10 @@ case "$DOTFILES_OS" in
 			local script="$(.fzf)"
 			if [ -f "$script" ]; then
 				echo "Linking dotfiles script \"$script\""
-				pushd "$DOTFILES_SCRIPT_DIRECTORY" > /dev/null
+				pushd "$DOTFILES_SCRIPTS_DIRECTORY" > /dev/null
 				ln -s "$script"
 				. "$script"
-				popd "$DOTFILES_SCRIPT_DIRECTORY" > /dev/null
+				popd "$DOTFILES_SCRIPTS_DIRECTORY" > /dev/null
 			else
 				echo "No script selected (output was \"$script\")"
 			fi
