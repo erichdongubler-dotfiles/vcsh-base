@@ -15,19 +15,23 @@ alias .git='git --git-dir="$DOTFILES_DIRECTORY.git/" --work-tree="$HOME"'
 
 
 # Load extension scripts
-DOTFILES_SCRIPTS_DIRECTORY="$DOTFILES_DIRECTORY/scripts/"
-export DOTFILES_SCRIPTS_DIRECTORY
-function .reload () {
-	if [ -d "$DOTFILES_SCRIPTS_DIRECTORY" ]; then
-		echo -e "\033[37mReloading extensions from \033[1;34m\"$DOTFILES_SCRIPTS_DIRECTORY\"\033[00m"
-		for file in "$DOTFILES_SCRIPTS_DIRECTORY"/.*.sh; do
+export DOTFILES_SCRIPTS_DIRECTORY="$DOTFILES_DIRECTORY/scripts/"
+
+if [ -d "$DOTFILES_SCRIPTS_DIRECTORY" ]; then
+	echo -e "\033[37mReloading extensions from \033[1;34m\"$DOTFILES_SCRIPTS_DIRECTORY\"\033[00m"
+	for file in "$DOTFILES_SCRIPTS_DIRECTORY"/.*.sh; do
+		if [ -f "$file" ]; then
 			. "$file"
-		done
-		for file in "$DOTFILES_SCRIPTS_DIRECTORY"/*.sh; do
+		fi
+	done
+	for file in "$DOTFILES_SCRIPTS_DIRECTORY"/*.sh; do
+		if [ -f "$file" ]; then
 			echo -e "  \033[37mLoading \033[1;34m${file##*/}\033[00m"
 			. "$file"
-		done
-	fi
-}
-.reload
+		fi
+	done
+fi
 
+.reload() {
+	. ~/.bashrc
+}
