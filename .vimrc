@@ -208,7 +208,7 @@ fun! s:goyo_enter()
 	set noshowmode
 	set noshowcmd
 	set scrolloff=999
-	call EnableWordWrap()
+	:EnableWordWrap
 	Limelight
 endfun
 
@@ -220,7 +220,7 @@ fun! s:goyo_leave()
 	set showmode
 	set showcmd
 	set scrolloff=5
-	call DisableWordWrap()
+	:DisableWordWrap
 	Limelight!
 endfun
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -337,18 +337,14 @@ nnoremap <Leader>i :call ToggleShowWhitespace()<CR>
 set formatoptions-=t " Disable hard breaks at textwidth boundary
 set breakindentopt=shift:2 " Show soft-wrapped text with extra indent of 2 spaces
 Plug 'ErichDonGubler/vim-option-bundle'
-fun! DisableWordWrap()
-	call g:word_wrap_bundle.SetLocalTo(0)
-endfun
-fun! EnableWordWrap()
-	call g:word_wrap_bundle.SetLocalTo(1)
-endfun
-fun! BindWordWrapOptions()
+command! -nargs=0 DisableWordWrap call g:word_wrap_bundle.SetLocalTo(0)
+command! -nargs=0 EnableWordWrap call g:word_wrap_bundle.SetLocalTo(1)
+fun! s:BindWordWrapOptions()
 	let g:word_wrap_bundle = option_bundle#create('word wrap', 0, ['wrap', 'linebreak', 'breakindent'])
 	nnoremap <Leader><Tab> :call g:word_wrap_bundle.ToggleLocal()<CR>
 	nnoremap <Leader><S-Tab> :call g:word_wrap_bundle.ToggleGlobal()<CR>
 endfun
-call plug#add_end_task(function('BindWordWrapOptions'))
+call plug#add_end_task(function('s:BindWordWrapOptions'))
 "     Trim trailing whitespace on save
 fun! <SID>StripTrailingWhitespaces()
 	let l = line(".")
@@ -536,7 +532,10 @@ Plug 'cespare/vim-toml'
 Plug 'jceb/vim-orgmode' | Plug 'tpope/vim-speeddating'
 let g:org_heading_highlight_colors = ['Identifier']
 let g:org_heading_highlight_levels = 10 " Some arbitrary number
-autocmd FileType text,org call EnableWordWrap()
+augroup orgmode
+	 au!
+	 au FileType text,org :EnableWordWrap
+augroup END
 Plug 'rudes/vim-java'
 Plug 'pangloss/vim-javascript'
 let g:tagbar_type_javascript = {
