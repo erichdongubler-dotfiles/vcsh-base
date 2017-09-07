@@ -80,7 +80,8 @@ if has("gui_running")
 	set guioptions-=m " Don't show the menu bar, either. ;)
 	set guioptions-=T " Don't show the toolbar
 	set guioptions-=e " Don't show GUI tabs
-	set guioptions-=r " Don't show scrollbar
+	set guioptions-=r " Don't show right-hand scrollbar
+	set guioptions-=L " Don't show left-hand scrollbar
 	set mousemodel= " Don't use right-click menu
 
 	if has("gui_gtk2")
