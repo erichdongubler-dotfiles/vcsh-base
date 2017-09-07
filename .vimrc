@@ -26,6 +26,8 @@ command! Q :q
 command! Qa :qa
 command! QA :qa
 map <Leader>q :q<CR>
+"   Get a Leader mapping for saves
+nmap <Leader>s :w<CR>
 "   Overwrite files that need sudo
 cmap w!! w !sudo tee % >/dev/null
 "   Make Home go to the beginning of the indented line, not the line itself
