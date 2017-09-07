@@ -43,8 +43,8 @@ imap <S-Del> <C-o>dd
 "     Here, the bind only deletes the content of the lines, not the lines themselves
 vmap <S-Del> ^o$d
 "   Add some common line-ending shortcuts
-nnoremap <Leader>; <Esc>A;
-nnoremap <Leader>. <Esc>A.
+nnoremap <Leader>; A;
+nnoremap <Leader>. A.
 Plug 'ErichDonGubler/vim-file-browser-integration'
 nnoremap <Leader>e :SelectCurrentFile<CR>
 nnoremap <Leader>x :OpenCurrentFile<CR>
