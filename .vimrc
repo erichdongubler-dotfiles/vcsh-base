@@ -381,6 +381,7 @@ Plug 'reedes/vim-textobj-quote'
 Plug 'mattn/emmet-vim'
 Plug 'whatyouhide/vim-textobj-xmlattr' | Plug 'kana/vim-textobj-user'
 Plug 'thalesmello/vim-textobj-methodcall' | Plug 'kana/vim-textobj-user'
+Plug 'alvan/vim-closetag'
 "   Nice highlighting plugins
 Plug 'geoffharcourt/vim-coloresque'
 if has('python')
