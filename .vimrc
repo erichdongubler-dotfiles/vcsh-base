@@ -130,7 +130,8 @@ endif
 noremap <C-ScrollWheelDown> 3zl
 noremap <C-ScrollWheelUp> 3zh
 " Other view configuration
-set scrolloff=5
+command! -nargs=0 ResetScrollOff set scrolloff=5
+ResetScrollOff
 
 Plug 'ErichDonGubler/vim-sublime-monokai'
 let g:monokai_term_italic = 1
@@ -210,7 +211,6 @@ fun! s:goyo_enter()
 	endif
 	set noshowmode
 	set noshowcmd
-	set scrolloff=999
 	:EnableWordWrap
 	Limelight
 endfun
@@ -222,7 +222,6 @@ fun! s:goyo_leave()
 	endif
 	set showmode
 	set showcmd
-	set scrolloff=5
 	:DisableWordWrap
 	Limelight!
 endfun
