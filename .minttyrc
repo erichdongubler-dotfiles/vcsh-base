@@ -11,3 +11,4 @@ FontWeight=400
 FontIsBold=no
 Locale=en_US
 Charset=UTF-8
+Scrollbar=none
