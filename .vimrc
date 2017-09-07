@@ -33,13 +33,13 @@ cmap w!! w !sudo tee % >/dev/null
 "   Make Home go to the beginning of the indented line, not the line itself
 nnoremap <Home> ^
 "   Use Ctrl-Enter to go to a new line
-imap <C-CR> <Esc>o
-imap  <Esc>o
-imap  <Esc>O
+imap <C-CR> <C-o>o
+imap  <C-o>o
+imap  <C-o>O
 "   Use Shift-Delete to delete the current line
 set <S-Del>=[3;2~
 nmap <S-Del> dd
-imap <S-Del> <Esc>ddi
+imap <S-Del> <C-o>dd
 "     Here, the bind only deletes the content of the lines, not the lines themselves
 vmap <S-Del> ^o$d
 "   Add some common line-ending shortcuts
