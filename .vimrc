@@ -409,6 +409,7 @@ Plug 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 Plug 'dominikduda/vim_current_word'
 let g:vim_current_word#highlight_only_in_focused_window = 1
+hi link CurrentWord Underlined
 "    Misc
 Plug 'terryma/vim-multiple-cursors'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -433,8 +434,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set smartcase
-highlight clear Search
-highlight Search gui=underline cterm=underline
+hi! link Search Underlined
 map <Leader>h :%s/
 vmap <Leader>h :s/
 "   Better buffer search
