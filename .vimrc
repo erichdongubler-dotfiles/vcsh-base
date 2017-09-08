@@ -137,6 +137,19 @@ Plug 'ErichDonGubler/vim-sublime-monokai'
 let g:monokai_term_italic = 1
 fun! s:ConfigureColors()
 	colorscheme monokai
+	call g:SublimeMonokaiHighlight('Todo', { 'fg': g:sublime_monokai_orange,   'format': 'bold,italic' }) " TODO: What the crap, man!
+	call g:SublimeMonokaiHighlight('MatchTag', { 'format': 'reverse,standout' })
+
+	hi! link jsRegexpCharClass Special
+	hi! link jsRegexpBackRef SpecialChar
+	hi! link jsRegexpMod SpecialChar
+	hi! link jsRegexpOr SpecialChar
+
+	" It's nice to have the builtins highlighted, but they can cause some conflicts
+	hi! link pythonBuiltInObj Constant
+	hi! link pythonBuiltInType Constant
+
+	hi! link xmlProcessingDelim Comment
 endfun
 call plug#add_end_task(function('s:ConfigureColors'))
 
