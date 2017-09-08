@@ -583,6 +583,8 @@ augroup sublime
 	au!
 	au BufNewFile,BufRead *.sublime-project,*.sublime-build,*.sublime-snippet setlocal filetype=json
 augroup END
+command! -nargs=0 OpenFileInSublime exec '!subl ' . expand('%:p') . ':' . line('.') . ':' . col('.')
+nmap <Leader>S OpenFileInSublime
 
 Plug 'ryanss/vim-hackernews'
 call plug#end()
