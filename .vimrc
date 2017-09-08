@@ -43,8 +43,16 @@ imap <S-Del> <C-o>dd
 "     Here, the bind only deletes the content of the lines, not the lines themselves
 vmap <S-Del> ^o$d
 "   Add some common line-ending shortcuts
-nnoremap <Leader>; A;
-nnoremap <Leader>. A.
+fun! s:append_to_line(sequence)
+	let l = line(".")
+	let c = col(".")
+	exec 'normal! A' . a:sequence
+	call cursor(l, c)
+endfun
+command! -nargs=0 AppendSemicolon call s:append_to_line(';')
+command! -nargs=0 AppendPeriod call s:append_to_line('.')
+nnoremap <Leader>; :AppendSemicolon<CR>
+nnoremap <Leader>. :AppendPeriod<CR>
 Plug 'ErichDonGubler/vim-file-browser-integration'
 nnoremap <Leader>e :SelectCurrentFile<CR>
 nnoremap <Leader>x :OpenCurrentFile<CR>
