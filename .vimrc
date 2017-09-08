@@ -169,16 +169,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'scrooloose/nerdtree'
 let g:NERDTreeIndicatorMapCustom = {
-			\ "Modified"  : "M",
+			\ "Clean"     : "✔︎",
+			\ "Deleted"   : "✖",
+			\ "Dirty"     : "*",
+			\ "Ignored"   : "Ø",
+			\ "Modified"  : "*",
+			\ "Renamed"   : "➜",
 			\ "Staged"    : "+",
-			\ "Untracked" : "_",
-			\ "Renamed"   : "R",
+			\ "Unknown"   : "?",
 			\ "Unmerged"  : "=",
-			\ "Deleted"   : "X",
-			\ "Dirty"     : "D",
-			\ "Clean"     : ":D",
-			\ "Ignored"   : "I",
-			\ "Unknown"   : "?"
+			\ "Untracked" : "_",
 			\ }
 if has('python')
 	Plug 'jaxbot/github-issues.vim'
