@@ -369,13 +369,11 @@ fun! s:BindWordWrapOptions()
 endfun
 call plug#add_end_task(function('s:BindWordWrapOptions'))
 "     Trim trailing whitespace on save
-fun! <SID>StripTrailingWhitespaces()
-	let l = line(".")
-	let c = col(".")
-	%s/\s\+$//e
-	call cursor(l, c)
-endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+Plug 'ntpeters/vim-better-whitespace'
+hi! link ExtraWhitespace Error
+augroup StripWhitespace
+	autocmd BufEnter * EnableStripWhitespaceOnSave
+augroup END
 "   Alignment
 Plug 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
