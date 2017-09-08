@@ -589,7 +589,10 @@ nmap <Leader>S OpenFileInSublime
 Plug 'ryanss/vim-hackernews'
 call plug#end()
 
-fun! s:SyntaxItem()
-	return synIDattr(synID(line("."), col("."), 1), "name")
-endfun
-command! -nargs=0 EchoHighlightingGroup echo s:SyntaxItem()
+fun! s:SyntaxStack()
+  if !exists('*synstack')
+    return
+  endif
+  return map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+command! -nargs=0 EchoHighlightingGroup echo s:SyntaxStack()
