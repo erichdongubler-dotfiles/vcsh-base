@@ -461,6 +461,7 @@ let g:Cmd2_options = {
 	\ '_complete_fuzzy': 1,
 	\ }
 map / /<F12>
+map ? ?<F12>
 cmap <F12> <Plug>(Cmd2Suggest)
 "   Multi-file search
 Plug 'dyng/ctrlsf.vim'
