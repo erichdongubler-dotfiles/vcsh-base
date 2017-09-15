@@ -259,6 +259,8 @@ Plug 'dhruvasagar/vim-prosession'
 if !has('nvim')
 	let g:prosession_tmux_title = 1
 endif
+Plug 'gikmx/ctrlp-obsession' | Plug 'ctrlpvim/ctrlp.vim'
+map <Leader>P :CtrlPObsession<CR>
 
 " Symbols
 set tags=.tags
@@ -287,9 +289,8 @@ if executable('rg')
 endif
 let g:ctrlp_map = '<Leader>p'
 map <Leader>p :CtrlP<CR>
-map <Leader>P :CtrlPBuffer<CR>
 map <Leader>o :CtrlPMRU<CR>
-map <Leader>O :CtrlPRTS<CR>
+map <Leader>O :CtrlPBuffer<CR>
 map <Leader>r :CtrlPBufTag %<CR>
 map <Leader>R :CtrlPTag<CR>
 map <Leader>/ :CtrlPLine<CR>
