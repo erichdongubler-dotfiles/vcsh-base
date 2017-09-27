@@ -23,16 +23,16 @@
 	dw = !git diff-words
 	edit-config = config --global -e
 	init-commit = !git commit-everything -m 'Initial commit'
-	start = !"$DOTFILES_SCRIPTS_DIRECTORY/git/init_custom.sh"
+	la = status -u
 	last = log -1 HEAD
 	list-assumed-unchanged = !git ls-files -v | grep -e "^[hsmrck]"
 	ls = status
-	la = status -u
 	new = "!f() { touch "$1"; ${EDITOR:-vim} "$1"; git add "$1"; }; f"
 	pl = !git prettylog
 	prettylog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	pushup = !git up && git push
 	restart = "!f() { read -n1 -p \"warning: you are about to wipe out your entire local repo. Are you sure you want to do this? (y/n) \" confirmation; echo -e \"\n\"; if [ \"$confirmation\" = \"y\" ]; then rm -rf .* *; git start \"$@\"; else echo \"Aborting.\"; fi;  }; f"
+	start = !"$DOTFILES_SCRIPTS_DIRECTORY/git/init_custom.sh"
 	unstage = reset HEAD --
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	update = !git stash && git up && git stash pop
