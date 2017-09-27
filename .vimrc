@@ -220,8 +220,8 @@ aug QFClose
 aug END
 "  Line numbers
 set cursorline
-set number
-nnoremap <Leader>n :set number!<CR>
+set number relativenumber
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Distraction-free mode
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
