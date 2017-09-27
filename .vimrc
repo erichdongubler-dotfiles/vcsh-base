@@ -256,9 +256,6 @@ set sessionoptions+=tabpages " Remember tabs in session
 set sessionoptions+=globals
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
-if !has('nvim')
-	let g:prosession_tmux_title = 1
-endif
 Plug 'gikmx/ctrlp-obsession' | Plug 'ctrlpvim/ctrlp.vim'
 map <Leader>P :CtrlPObsession<CR>
 
