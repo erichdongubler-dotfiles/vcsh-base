@@ -438,8 +438,6 @@ vmap <Leader>h :s/
 "   Better buffer search
 Plug 'haya14busa/incsearch.vim'
 let g:incsearch#auto_nohlsearch = 1
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 map n  <Plug>(incsearch-nohl-n)zz
 map N  <Plug>(incsearch-nohl-N)zz
