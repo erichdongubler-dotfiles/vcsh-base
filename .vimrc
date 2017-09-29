@@ -580,8 +580,12 @@ augroup sublime
 	au!
 	au BufNewFile,BufRead *.sublime-project,*.sublime-build,*.sublime-snippet setlocal filetype=json
 augroup END
-command! -nargs=0 OpenFileInSublime exec '!subl ' . expand('%:p') . ':' . line('.') . ':' . col('.')
-nmap <Leader>S :OpenFileInSublime
+if has('win32unix')
+	command! -nargs=0 OpenFileInSublime exec '!subl "$(cygpath -w "' . expand('%:p') . '")"' . '\:' . line('.') . '\:' . col('.')
+else
+	command! -nargs=0 OpenFileInSublime exec '!subl ' . expand('%:p') . ':' . line('.') . ':' . col('.')
+endif
+nmap <Leader>S :OpenFileInSublime<CR>
 
 Plug 'ryanss/vim-hackernews'
 call plug#end()
