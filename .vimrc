@@ -580,12 +580,28 @@ augroup sublime
 	au!
 	au BufNewFile,BufRead *.sublime-project,*.sublime-build,*.sublime-snippet setlocal filetype=json
 augroup END
-if has('win32unix')
-	command! -nargs=0 OpenFileInSublime exec '!subl "$(cygpath -w "' . expand('%:p') . '")"' . '\:' . line('.') . '\:' . col('.')
-else
-	command! -nargs=0 OpenFileInSublime exec '!subl ' . expand('%:p') . ':' . line('.') . ':' . col('.')
-endif
+
+fun! s:EscapeFileAsArg(file_name)
+	let escaped = expand('%:p')
+	if has('win32unix')
+		let escaped = '"$(cygpath -w "' . escaped . '")"'
+	endif
+	return escaped
+endf
+
+fun! s:EscapeCurrentFileAsArg()
+	return s:EscapeFileAsArg(expand('%:p'))
+endfun
+
+command! -nargs=0 OpenFileInSublime exec '!subl ' . s:EscapeCurrentFileAsArg() . ':' . line('.') . ':' . col('.')
 nmap <Leader>S :OpenFileInSublime<CR>
+
+if has('win32unix')
+	command! -nargs=0 OpenFileInVisualStudio exec '!devenv //edit ' . s:EscapeCurrentFileAsArg() . ' //command "' . line('.') . '"'
+elseif has('win32')
+	command! -nargs=0 OpenFileInVisualStudio exec '!devenv /edit ' . s:EscapeCurrentFileAsArg() . ' /command "' . line('.') . '"'
+endif
+nmap <Leader>V :OpenFileInVisualStudio<CR>
 
 Plug 'ryanss/vim-hackernews'
 call plug#end()
