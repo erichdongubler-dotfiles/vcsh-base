@@ -46,3 +46,5 @@
 	ui = true
 [credential]
 	helper = store
+[difftool]
+	prompt = false
