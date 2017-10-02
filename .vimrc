@@ -603,7 +603,6 @@ elseif has('win32')
 endif
 nmap <Leader>V :OpenFileInVisualStudio<CR>
 
-Plug 'ryanss/vim-hackernews'
 call plug#end()
 
 fun! s:SyntaxStack()
