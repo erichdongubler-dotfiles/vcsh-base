@@ -604,12 +604,17 @@ elseif has('win32')
 endif
 nmap <Leader>V :OpenFileInVisualStudio<CR>
 
-call plug#end()
-
 fun! s:SyntaxStack()
-  if !exists('*synstack')
-    return
-  endif
-  return map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+	if !exists('*synstack')
+		return
+	endif
+	return map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 command! -nargs=0 EchoHighlightingGroup echo s:SyntaxStack()
+
+call plug#end()
+
+if empty(glob('~/.vim/bundle'))
+	PlugInstall --sync
+	so $MYVIMRC
+endif
