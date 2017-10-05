@@ -23,6 +23,7 @@ if executable('tmux')
 endif
 "   Alias Q to do what we really want
 command! Q :q
+command! -bang Q :q!
 command! Qa :qa
 command! QA :qa
 map <Leader>q :q<CR>
