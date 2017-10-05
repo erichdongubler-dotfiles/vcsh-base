@@ -1,8 +1,0 @@
-.*.swp
-.dotfiles.git
-.tags
-tags
-.vim/bundle
-.vim/.*
-.cache
-.viminfo
