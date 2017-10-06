@@ -1,5 +1,3 @@
-#! /bin/bash
-
 case "$DOTFILES_OS" in
 	"darwin")
 		export CLICOLOR=1
@@ -13,6 +11,13 @@ case "$DOTFILES_OS" in
 		alias ll='ls -l --color=auto --time-style='"'+%d-%m-%Y %H:%M:%S'"
 		alias la='ls --color=auto -A'
 		alias l.='ls --color=auto -d .!(|.)'
+		alias rm='rm -Iv --one-file-system'
 		;;
 esac
 
+function swap() {
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+}
+
+alias grep='grep --color=auto'
