@@ -1,9 +1,7 @@
 [[ $- != *i* ]] && return # If not running interactively, don't do anything
 
-.reload_scripts bash
-
-.reload() {
-	. ~/.bashrc
+.reload_interactive_config() {
+	. "$HOME/.bashrc"
 }
 
 # Complete some commands that use...well, other commands
@@ -41,3 +39,6 @@ function __custom_ps1 () {
 
 PROMPT_DIRTRIM=3
 PROMPT_COMMAND=__custom_ps1
+
+.reload_interactive_extensions sh
+.reload_interactive_extensions bash
