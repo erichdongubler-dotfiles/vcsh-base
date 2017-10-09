@@ -15,6 +15,7 @@
 [log]
 	decorate = full
 [alias]
+	amend = commit --amend
 	assume-unchanged = update-index --assume-unchanged
 	assume-unchanged-revert = update-index --no-assume-unchanged
 	commit-everything = !git add -A && git commit
