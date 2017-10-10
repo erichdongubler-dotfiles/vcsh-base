@@ -35,6 +35,7 @@
 	qa = quick-amend
 	quick-amend = commit -a --amend --no-edit
 	restart = "!f() { read -n1 -p \"warning: you are about to wipe out your entire local repo. Are you sure you want to do this? (y/n) \" confirmation; echo -e \"\n\"; if [ \"$confirmation\" = \"y\" ]; then rm -rf .* *; git start \"$@\"; else echo \"Aborting.\"; fi;  }; f"
+	root = !cd "$(git rev-parse --show-toplevel)"
 	start = !"$DOTFILES_SCRIPTS_DIRECTORY/git/init_custom.sh"
 	unstage = reset HEAD --
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
