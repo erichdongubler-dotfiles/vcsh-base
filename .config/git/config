@@ -51,3 +51,5 @@
 	helper = store
 [difftool]
 	prompt = false
+[svn]
+	pushmergeinfo = true
