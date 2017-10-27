@@ -1,4 +1,3 @@
 . ~/.profile
-.reload_login_extensions sh
-.reload_login_extensions bash
+.reload_login_extensions sh bash
 [[ -f ~/.bashrc ]] && . ~/.bashrc
