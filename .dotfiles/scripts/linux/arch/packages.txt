@@ -1,4 +1,0 @@
-pushbullet-cli
-fzf
-vim
-git
