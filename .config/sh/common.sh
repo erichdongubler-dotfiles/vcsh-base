@@ -1,5 +1,3 @@
-
-
 .reload_scripts_from_config() {
 	local script_type=${1:?no script type specified}
 	shift
