@@ -22,23 +22,15 @@
 	delta = diff --color-words --no-index
 	diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 	diff-no-whitespace = diff --ignore-space-at-eol -b -w --ignore-blank-lines
-	dw = !git diff-words
-	init-commit = !git commit-everything -m 'Initial commit'
 	la = status -u
-	last = log -1 HEAD
-	list-assumed-unchanged = !git ls-files -v | grep -e "^[hsmrck]"
 	ls = status
-	new = "!f() { touch "$1"; ${EDITOR:-vim} "$1"; git add "$1"; }; f"
 	pl = !git prettylog
 	prettylog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
 	pushup = !git up && git push
-	qa = quick-amend
-	quick-amend = commit -a --amend --no-edit
 	restart = "!f() { read -n1 -p \"warning: you are about to wipe out your entire local repo. Are you sure you want to do this? (y/n) \" confirmation; echo -e \"\n\"; if [ \"$confirmation\" = \"y\" ]; then rm -rf .* *; git start \"$@\"; else echo \"Aborting.\"; fi;  }; f"
 	root = !cd "\"$(git rev-parse --show-toplevel)\""
 	start = !"$DOTFILES_SCRIPTS_DIRECTORY/git/init_custom.sh"
 	svn-diff = "!f() { git diff --no-prefix \"$@\" | awk '/^diff --git/ { print \"Index: \" $3; current_file=$3; next } /^index/ { print \"===================================================================\"; next } /^--- [^/]/ { cmd = \"git svn find-rev $(git branch -r --merged HEAD)\"; cmd | getline latest_revision; printf \"%s\\t(revision %s)\\n\",$0,latest_revision; next } /^\\+\\+\\+/ { printf\"%s\\t(working copy)\\n\",$0; next } /^--- [/]/ { printf\"--- %s\\t(revision 0)\\n\",current_file; next } { print }'; }; f"
-	unstage = reset HEAD --
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	update = !git stash && git up && git stash pop
 	uplog = !git up && git prettylog
