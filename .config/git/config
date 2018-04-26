@@ -26,6 +26,7 @@
 	root = !cd "\"$(git rev-parse --show-toplevel)\""
 	start = !"$XDG_CONFIG_HOME/git/init_custom.sh \"$@\""
 	svn-diff = !"$XDG_CONFIG_HOME/git/svn_diff.sh"
+	svn-shallow-clone = !"$XDG_CONFIG_HOME/git/svn_shallow_clone.sh"
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	update = !git stash && git up && git stash pop
 	uplog = !git up && git prettylog --since yesterday
