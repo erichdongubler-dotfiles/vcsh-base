@@ -15,14 +15,9 @@
 [log]
 	decorate = full
 [alias]
-	amend = commit --amend
-	assume-unchanged = update-index --assume-unchanged
-	assume-unchanged-revert = update-index --no-assume-unchanged
-	commit-everything = !git add -A && git commit
 	delta = diff --color-words --no-index
 	diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 	diff-no-whitespace = diff --ignore-space-at-eol -b -w --ignore-blank-lines
-	la = status -u
 	ls = status
 	pl = !git prettylog
 	prettylog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
