@@ -4,7 +4,7 @@
 
 	echo -e "  \033[37mReloading $script_type shell extensions...\033[00m"
 	for shell_type in $@; do
-		local scripts_directory="$XDG_CONFIG_HOME/$shell_type/$script_type"
+		local scripts_directory="$XDG_CONFIG_HOME/erichdongubler/$shell_type/$script_type"
 		if [ -d "$scripts_directory" ]; then
 			echo -e "    from \033[1;34m\"$scripts_directory\"\033[00m"
 			for file in $(ls "$scripts_directory/."*".$shell_type" 2> /dev/null); do
