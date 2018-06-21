@@ -2,7 +2,7 @@
 	local script_type=${1:?no script type specified}
 	shift
 
-	echo -e "  \033[37mReloading $script_type shell extensions...\033[00m"
+	echo -e "  \033[1mReloading $script_type shell extensions...\033[0m"
 	for shell_type in $@; do
 		local scripts_directory="$XDG_CONFIG_HOME/erichdongubler/$shell_type/$script_type"
 		if [ -d "$scripts_directory" ]; then
@@ -14,7 +14,7 @@
 			done
 			for file in $(ls "$scripts_directory/"*".$shell_type"  2> /dev/null); do
 				if [ -f "$file" ]; then
-					echo -e "      \033[37mLoading \033[1;34m${file##*/}\033[00m"
+					echo -e "      Loading \033[1;34m${file##*/}\033[00m"
 					. "$file"
 				fi
 			done
@@ -31,5 +31,5 @@
 }
 
 .login() {
-	echo -e "\033[1;37mLogged in as \033[1;32m$(id -un)\033[1;37m@\033[1;32m$(hostname)\033[00m"
+	echo -e "\033[1mLogged in as \033[1;32m$(id -un)\033[1m@\033[1;32m$(hostname)\033[00m"
 }
