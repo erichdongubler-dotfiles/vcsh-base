@@ -28,7 +28,7 @@
 }
 
 /^--- [/]/ {
-	printf("--- %s\t(revision 0)\n", current_file)
+	printf("--- %s\t(nonexistent)\n", current_file)
 	next
 }
 
