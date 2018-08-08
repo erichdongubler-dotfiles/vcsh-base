@@ -22,7 +22,7 @@
 	next
 }
 
-/^\\+\\+\\+/ {
+/^\+\+\+/ {
 	printf("%s\t(working copy)\n", $0)
 	next
 }
