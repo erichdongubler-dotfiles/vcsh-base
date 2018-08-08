@@ -11,6 +11,10 @@
 	next
 }
 
+/^new file mode/ {
+	next
+ }
+
 /^--- [^/]/ {
 	cmd = "git svn find-rev $(git branch -r --merged HEAD)"
 	cmd | getline latest_revision
