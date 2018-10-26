@@ -1,1 +1,3 @@
+#! /bin/sh
+
 touch "$XDG_CONFIG_HOME"/git/credentials
