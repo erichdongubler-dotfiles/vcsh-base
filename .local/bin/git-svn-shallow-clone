@@ -1,3 +1,5 @@
+#! /bin/sh
+
 repo_url="${1:?error: expected invocation of the form '<command> <repo_url> [<clone_directory> <other options for `git clone`>]'}"
 shift
 target_dir="${1:-${repo_url##*/}}"

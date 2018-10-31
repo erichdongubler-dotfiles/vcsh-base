@@ -1,3 +1,5 @@
+#! /bin/sh
+
  git diff --no-prefix "$@" | awk '
 
 /^diff --git/ {
