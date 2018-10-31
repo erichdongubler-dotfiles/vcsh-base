@@ -1,7 +1,7 @@
 . "$XDG_CONFIG_HOME/erichdongubler/sh/common.sh"
 
 if [[ $- == *l* ]]; then
-    .login
+	.login
 	.reload_login_extensions sh bash
 fi
 
