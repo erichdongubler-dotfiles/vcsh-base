@@ -7,7 +7,7 @@
 	default = simple
 [merge]
 	ff = only
-	tool = kdiff3
+	tool = p4merge
 [rebase]
 	autostash = true
 [stash]
@@ -36,6 +36,8 @@
 	ui = true
 [credential]
 	helper = store
+[diff]
+	tool = kdiff3
 [difftool]
 	prompt = false
 [svn]
