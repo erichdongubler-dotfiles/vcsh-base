@@ -32,7 +32,10 @@
 	autocrlf = input
 	longpaths = true
 	fscache = true
-	pager = less -x1,5
+	pager = less --tabs=4 -RFX
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+	show = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 [color]
 	ui = true
 [credential]
@@ -49,3 +52,10 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
