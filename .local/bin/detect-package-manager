@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SUPPORTED_PACKAGE_MANAGERS="pacman '-S' apt-get 'install'"
+SUPPORTED_PACKAGE_MANAGERS="pacman '-S --noconfirm --needed' apt-get 'install --yes'"
 
 __detect_package_manager() {
 	tried=""
@@ -23,3 +23,4 @@ __detect_package_manager() {
 }
 
 __detect_package_manager $SUPPORTED_PACKAGE_MANAGERS
+exit $?
