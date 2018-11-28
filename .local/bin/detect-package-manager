@@ -4,7 +4,7 @@ SUPPORTED_PACKAGE_MANAGERS="pacman '-S' apt-get 'install'"
 
 __detect_package_manager() {
 	tried=""
-	while [ $# -ne 0 ]; do
+	while [ $# -ge 2 ]; do
 		command="$1"
 		args="$2"
 		shift 2
@@ -15,6 +15,9 @@ __detect_package_manager() {
 			return 0
 		fi
 	done
+	if [ $# -ne 0 ]; then
+		>&2 echo "error: trailing arg(s) \"$@\""
+	fi
 	>&2 echo "No supported package manager detected (checked: ${tried#*, })..."
 	return 1
 }
