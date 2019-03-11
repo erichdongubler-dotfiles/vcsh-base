@@ -22,5 +22,5 @@ __detect_package_manager() {
 	return 1
 }
 
-__detect_package_manager pacman '-S --noconfirm --needed' apt-get 'install --yes'
+__detect_package_manager pacman '-S --noconfirm --needed' apt-get 'install --yes' dnf '-y install'
 exit $?
