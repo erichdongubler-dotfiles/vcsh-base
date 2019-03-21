@@ -8,6 +8,8 @@
 [merge]
 	ff = only
 	tool = p4merge
+[mergetool "p4merge"]
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 [rebase]
 	autostash = true
 [stash]
