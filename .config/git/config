@@ -18,6 +18,7 @@
 	decorate = full
 [alias]
 	add-no-whitespace = !"f() { git diff-no-whitespace -U0 --no-color \"$@\" | git apply --cached --ignore-whitespace --unidiff-zero -; } f"
+	ckt = checkout
 	delta = diff --color-words --no-index
 	diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 	diff-no-whitespace = diff --ignore-space-at-eol -b -w --ignore-blank-lines
