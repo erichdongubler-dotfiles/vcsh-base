@@ -1,6 +1,8 @@
 [user]
 	email = erichdongubler@gmail.com
 	name = Erich Gubler
+[commit]
+	sign = true
 [pull]
 	ff = only
 [push]
