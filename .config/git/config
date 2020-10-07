@@ -32,7 +32,7 @@
 	root = !cd "\"$(git rev-parse --show-toplevel)\""
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	update = !git stash && git up && git stash pop
-	uplog = !git up && git prettylog --since yesterday
+	uplog = !git up && git prettylog --all --since yesterday
 [core]
 	autocrlf = input
 	longpaths = true
