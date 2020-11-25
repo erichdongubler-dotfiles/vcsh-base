@@ -13,7 +13,7 @@
 [mergetool "p4merge"]
 	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 [rebase]
-	autostash = true
+	autoStash = true
 [stash]
 	autostash = true
 [log]
