@@ -24,7 +24,7 @@
 [log]
 	decorate = full
 [alias]
-	add-no-whitespace = !"f() { git diff-no-whitespace -U0 --no-color \"$@\" | git apply --cached --ignore-whitespace --unidiff-zero -; } f"
+	add-no-whitespace = !"f() { git diff-no-whitespace -U0 --no-color \"$@\" | git apply --cached --ignore-whitespace --unidiff-zero -; }; f"
 	canpf = !git commit --amend --no-edit && git push --force-with-lease
 	ckt = checkout
 	delta = diff --color-words --no-index
