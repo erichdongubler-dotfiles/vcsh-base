@@ -13,9 +13,14 @@
 [mergetool "p4merge"]
 	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 [rebase]
+	autoSquash = true
 	autoStash = true
+	missingCommitsCheck = error
+	rescheduleFailedExec = true
+	stat = true
 [stash]
 	autostash = true
+	showPatch = true
 [log]
 	decorate = full
 [alias]
