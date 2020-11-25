@@ -32,7 +32,7 @@
 	diff-no-whitespace = diff --ignore-space-at-eol -b -w --ignore-blank-lines
 	ls = status
 	pl = !git prettylog
-	prettylog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+	prettylog = log --graph --decorate --format=format:'%C(dim white)---%C(reset) %C(bold blue)%h%C(reset) %C(dim white)-%C(reset)%C(auto)%d%C(reset)\n%C(white)%s%C(reset) %C(dim white)%an%C(reset) %C(dim green)(%ar)%C(reset)'
 	pushup = !git up && git push
 	restart = "!f() { read -n1 -p \"warning: you are about to wipe out your entire local repo. Are you sure you want to do this? (y/n) \" confirmation; echo -e \"\n\"; if [ \"$confirmation\" = \"y\" ]; then rm -rf .* *; git start \"$@\"; else echo \"Aborting.\"; fi;  }; f"
 	show-root = rev-parse --show-toplevel
