@@ -37,7 +37,9 @@
 	push-fwl = push --force-with-lease
 	pushup = !git up && git push
 	restart = "!f() { read -n1 -p \"warning: you are about to wipe out your entire local repo. Are you sure you want to do this? (y/n) \" confirmation; echo -e \"\n\"; if [ \"$confirmation\" = \"y\" ]; then rm -rf .* *; git start \"$@\"; else echo \"Aborting.\"; fi;  }; f"
+	re = restore
 	show-root = rev-parse --show-toplevel
+	sw = switch
 	up = !git pull --rebase --prune "$@" && git submodule update --init --recursive
 	update = !git stash && git up && git stash pop
 	uplog = !git up && git prettylog --all --since yesterday
