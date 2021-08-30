@@ -30,7 +30,6 @@
 	canpf = !git commit --amend --no-edit && git push --force-with-lease
 	ch-pk = cherry-pick
 	ckt = checkout
-	delta = diff --color-words --no-index
 	diff-words = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 	diff-no-whitespace = diff --ignore-space-at-eol -b -w --ignore-blank-lines
 	ls = status
