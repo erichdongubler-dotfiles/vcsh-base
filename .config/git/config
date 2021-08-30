@@ -5,6 +5,7 @@
 	sign = true
 [pull]
 	ff = only
+	rebase = true
 [push]
 	default = simple
 [merge]
