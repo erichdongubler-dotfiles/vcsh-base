@@ -3,6 +3,8 @@
 	name = Erich Gubler
 [commit]
 	sign = true
+[init]
+	defaultBranch = main
 [pull]
 	ff = only
 	rebase = true
